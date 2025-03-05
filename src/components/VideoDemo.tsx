@@ -26,7 +26,7 @@ const VideoDemo = () => {
         <div className="max-w-4xl mx-auto glassmorphism rounded-2xl p-1 border border-white/10 overflow-hidden">
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
             <iframe 
-              src="https://player.vimeo.com/video/983288259?h=ee46a32dbe&autoplay=0&loop=0&title=0&byline=0&portrait=0" 
+              src="https://player.vimeo.com/video/983288259?h=ee46a32dbe&autoplay=1&loop=0&title=0&byline=0&portrait=0&muted=0&quality=1080p" 
               className="absolute top-0 left-0 w-full h-full"
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture" 
