@@ -1,0 +1,161 @@
+
+import React from 'react';
+import { Cannabis, Mail, Phone } from 'lucide-react';
+
+const Footer = () => {
+  return (
+    <footer className="relative pt-20 pb-10 overflow-hidden">
+      <div className="absolute inset-0 grid-bg"></div>
+      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-cyber-dark to-transparent z-10"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
+          <div className="md:col-span-5 space-y-6">
+            <a href="/" className="flex items-center gap-2 group">
+              <div className="relative h-10 w-10 overflow-hidden">
+                <Cannabis 
+                  className="h-10 w-10 text-cyber-green group-hover:text-cyber-green-light transition-colors duration-300" 
+                  strokeWidth={1.5} 
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
+                <span className="text-xs text-gray-400">Presented by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors">AiWebTools.Ai</a></span>
+              </div>
+            </a>
+            
+            <p className="text-gray-400 max-w-lg">
+              Your ultimate cannabis intelligence assistant powered by AI. Get comprehensive strain information, potency calculations, and expert guidance.
+            </p>
+            
+            <div className="flex gap-4">
+              <a 
+                href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+                className="cyber-button text-sm"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                GET STARTED
+              </a>
+              <a 
+                href="https://www.aiwebtools.ai" 
+                className="cyber-button-purple text-sm"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                MORE AI TOOLS
+              </a>
+            </div>
+          </div>
+          
+          <div className="md:col-span-3 space-y-4">
+            <h3 className="font-cyber text-lg text-white">Links</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>
+                <a 
+                  href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt"
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Get Started
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.aiwebtools.ai" 
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  More AI Tools
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://openai.com/policies/privacy-policy/" 
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://aiwebtools.ai/terms-of-services" 
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="md:col-span-4 space-y-4">
+            <h3 className="font-cyber text-lg text-white">Contact</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>
+                <a 
+                  href="tel:4758008096" 
+                  className="flex items-center gap-2 hover:text-cyber-green transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-cyber-green" />
+                  <span>(475) 800-8096</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="mailto:Contact@ai-webtools.com" 
+                  className="flex items-center gap-2 hover:text-cyber-green transition-colors"
+                >
+                  <Mail className="h-4 w-4 text-cyber-green" />
+                  <span>Contact@ai-webtools.com</span>
+                </a>
+              </li>
+            </ul>
+            
+            <div className="mt-6">
+              <a 
+                href="https://www.aiwebtools.ai" 
+                className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple hover:text-cyber-purple-light transition-colors"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                More AI Tools
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-500 text-sm">
+            &copy; {new Date().getFullYear()} AiWebTools.Ai. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <a 
+              href="https://openai.com/policies/privacy-policy/" 
+              className="text-gray-500 hover:text-cyber-green text-sm transition-colors"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>
+            <a 
+              href="https://aiwebtools.ai/terms-of-services" 
+              className="text-gray-500 hover:text-cyber-green text-sm transition-colors"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

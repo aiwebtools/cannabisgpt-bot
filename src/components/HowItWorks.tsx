@@ -1,0 +1,100 @@
+
+import React from 'react';
+import { SearchCheck, FileText, Lightbulb, ChevronRight } from 'lucide-react';
+
+const steps = [
+  {
+    icon: SearchCheck,
+    title: "Ask Any Cannabis Question",
+    description: "Start by asking about strain lineage, potency calculations, or regulatory information.",
+    color: "text-cyber-green",
+    bgColor: "bg-cyber-green/10",
+    borderColor: "border-cyber-green/30"
+  },
+  {
+    icon: FileText,
+    title: "Get Web-Enhanced Results",
+    description: "CANNABIS GPT searches the web for the most up-to-date information and relevant YouTube videos.",
+    color: "text-cyber-purple",
+    bgColor: "bg-cyber-purple/10",
+    borderColor: "border-cyber-purple/30"
+  },
+  {
+    icon: Lightbulb,
+    title: "Receive Detailed Analysis",
+    description: "Receive comprehensive answers with visualizations, calculations, and expert guidance.",
+    color: "text-cyber-green",
+    bgColor: "bg-cyber-green/10",
+    borderColor: "border-cyber-green/30"
+  }
+];
+
+const HowItWorks = () => {
+  return (
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute -top-40 -left-40 w-80 h-80 bg-cyber-green/5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-cyber-purple/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <span className="text-xs font-cyber bg-cyber-purple/10 px-3 py-1 rounded-full text-cyber-purple border border-cyber-purple/30 mb-4 inline-block animate-fade-in">
+            SIMPLE TO USE
+          </span>
+          <h2 className="text-3xl md:text-4xl font-cyber font-bold mb-4 animate-fade-in">
+            <span className="text-white">How </span>
+            <span className="cyber-text-shadow text-cyber-green">CANNABIS GPT</span>
+            <span className="text-white"> Works</span>
+          </h2>
+          <p className="text-gray-300 animate-fade-in">
+            Get started in seconds with our intuitive AI assistant designed specifically for cannabis expertise.
+          </p>
+        </div>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col gap-8 relative">
+            {/* Connecting line */}
+            <div className="absolute left-[27px] top-12 bottom-12 w-[2px] bg-gradient-to-b from-cyber-green via-cyber-purple to-cyber-green hidden md:block"></div>
+            
+            {steps.map((step, index) => (
+              <div 
+                key={index}
+                className="flex flex-col md:flex-row gap-5 items-start relative animate-slide-up"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className={`flex-shrink-0 w-14 h-14 ${step.bgColor} rounded-full flex items-center justify-center ${step.borderColor} border z-10`}>
+                  <step.icon className={`h-6 w-6 ${step.color}`} />
+                </div>
+                
+                <div className="cyber-card flex-1 md:mt-0">
+                  <h3 className="text-xl font-cyber font-medium text-white mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-400">
+                    {step.description}
+                  </p>
+                </div>
+                
+                {index < steps.length - 1 && (
+                  <ChevronRight className="hidden md:block absolute -bottom-6 left-[25px] text-cyber-green rotate-90 h-5 w-5 z-10" />
+                )}
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 flex justify-center animate-fade-in">
+            <a 
+              href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+              className="cyber-button"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              GET STARTED NOW
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorks;
