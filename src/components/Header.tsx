@@ -37,6 +37,16 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
+              <span className="text-xs text-gray-400">
+                Presented by <a 
+                  href="https://www.aiwebtools.ai" 
+                  className="text-cyber-green hover:text-cyber-green-light transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  AiWebTools.Ai
+                </a>
+              </span>
               <a 
                 href="https://www.ctcannabisalliance.org" 
                 className="text-xs text-gray-400 hover:text-cyber-green flex items-center transition-colors"
