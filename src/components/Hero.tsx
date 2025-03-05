@@ -22,8 +22,10 @@ const Hero = () => {
     window.addEventListener('resize', resizeCanvas);
     
     // Particle system for 3D effect
+    // Reduce particle count on mobile for better performance
+    const isMobile = window.innerWidth < 768;
     const particles: { x: number; y: number; z: number; size: number; speed: number; color: string }[] = [];
-    const particleCount = 100;
+    const particleCount = isMobile ? 50 : 100;
     
     // Create particles
     for (let i = 0; i < particleCount; i++) {
@@ -43,12 +45,14 @@ const Hero = () => {
       
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Draw grid
+      // Draw grid with reduced density on mobile
       ctx.lineWidth = 0.3;
       ctx.strokeStyle = 'rgba(57, 255, 20, 0.1)';
       
+      const gridSize = isMobile ? 40 : 30;
+      
       // Horizontal lines
-      for (let y = 0; y < canvas.height; y += 30) {
+      for (let y = 0; y < canvas.height; y += gridSize) {
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(canvas.width, y);
@@ -56,7 +60,7 @@ const Hero = () => {
       }
       
       // Vertical lines
-      for (let x = 0; x < canvas.width; x += 30) {
+      for (let x = 0; x < canvas.width; x += gridSize) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
         ctx.lineTo(x, canvas.height);
@@ -108,28 +112,28 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center justify-center min-h-[90vh]">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7 space-y-8 text-center lg:text-left animate-fade-in">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left animate-fade-in">
             <div className="inline-block">
               <span className="text-xs font-cyber bg-cyber-green/10 px-3 py-1 rounded-full text-cyber-green border border-cyber-green/30">
                 AI-POWERED CANNABIS EXPERTISE
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-cyber font-bold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cyber font-bold tracking-tight leading-tight">
               <span className="text-white">Your Ultimate </span>  
               <span className="cyber-text-shadow text-cyber-green">Cannabis</span>
               <span className="text-white"> Intelligence Assistant</span>
             </h1>
             
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">
               Deep expertise in strain genetics, potency calculations, regulatory information, and cultivation advice - all enhanced with web search capabilities and YouTube video integration.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
                 href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
-                className="cyber-button"
+                className="cyber-button w-full sm:w-auto"
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -137,7 +141,7 @@ const Hero = () => {
               </a>
               <a 
                 href="https://www.aiwebtools.ai" 
-                className="cyber-button-purple"
+                className="cyber-button-purple w-full sm:w-auto"
                 target="_blank" 
                 rel="noopener noreferrer"
               >
@@ -147,10 +151,10 @@ const Hero = () => {
           </div>
           
           <div className="lg:col-span-5 flex justify-center lg:justify-end animate-float">
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
+            <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full bg-glow-green animate-pulse-glow"></div>
               <div className="glassmorphism rounded-2xl p-8 h-full w-full flex items-center justify-center relative overflow-hidden border border-cyber-green/20">
-                <Cannabis className="h-36 w-36 text-cyber-green animate-glow" />
+                <Cannabis className="h-28 w-28 sm:h-36 sm:w-36 text-cyber-green animate-glow" />
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyber-purple/20 rounded-full blur-3xl"></div>
                 <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyber-green/20 rounded-full blur-3xl"></div>
               </div>

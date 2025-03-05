@@ -1,3 +1,4 @@
+
 import React, { useEffect, lazy, Suspense } from 'react';
 import Header from '@/components/Header';
 
@@ -11,8 +12,8 @@ const Footer = lazy(() => import('@/components/Footer'));
 
 // Loading fallback
 const SectionLoader = () => (
-  <div className="flex justify-center items-center py-16">
-    <div className="h-12 w-12 border-4 border-t-cyber-green border-r-transparent border-b-cyber-purple border-l-transparent rounded-full animate-spin"></div>
+  <div className="flex justify-center items-center py-12 md:py-16">
+    <div className="h-8 w-8 sm:h-12 sm:w-12 border-4 border-t-cyber-green border-r-transparent border-b-cyber-purple border-l-transparent rounded-full animate-spin"></div>
   </div>
 );
 

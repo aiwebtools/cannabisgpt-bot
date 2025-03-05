@@ -64,18 +64,18 @@ const featureItems = [
 
 const Features = () => {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-16 md:py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-cyber-dark to-transparent z-10"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyber-purple/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyber-green/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
           <span className="text-xs font-cyber bg-cyber-green/10 px-3 py-1 rounded-full text-cyber-green border border-cyber-green/30 mb-4 inline-block animate-fade-in">
             CAPABILITIES
           </span>
-          <h2 className="text-3xl md:text-4xl font-cyber font-bold mb-4 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-cyber font-bold mb-4 animate-fade-in">
             <span className="text-white">Comprehensive </span>
             <span className="cyber-purple-text-shadow text-cyber-purple">Cannabis</span>
             <span className="text-white"> Intelligence</span>
@@ -85,7 +85,7 @@ const Features = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {featureItems.map((feature, index) => (
             <div 
               key={index} 
@@ -93,9 +93,9 @@ const Features = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`${feature.color} mb-4 inline-flex p-3 rounded-lg border border-white/10 bg-white/5`}>
-                <feature.icon className="h-6 w-6" />
+                <feature.icon className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
-              <h3 className="text-xl font-cyber font-medium text-white mb-3 group-hover:text-cyber-green transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-cyber font-medium text-white mb-2 sm:mb-3 group-hover:text-cyber-green transition-colors duration-300">
                 {feature.title}
               </h3>
               <p className="text-gray-400 text-sm">

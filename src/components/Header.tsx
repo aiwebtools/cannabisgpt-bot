@@ -37,7 +37,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
-              <span className="text-xs text-gray-400">Presented by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors">AiWebTools.Ai</a></span>
+              <span className="text-xs text-gray-400">by <span className="text-cyber-green hover:text-cyber-green-light transition-colors">AiWebTools.Ai</span></span>
             </div>
           </a>
 
@@ -65,6 +65,7 @@ const Header = () => {
           <button 
             className="md:hidden flex items-center justify-center h-10 w-10 rounded-md text-white focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6 text-cyber-green" />
