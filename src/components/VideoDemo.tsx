@@ -8,7 +8,7 @@ const VideoDemo = () => {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">
-          <span className="text-xs font-cyber bg-cyber-purple/10 px-3 py-1 rounded-full text-cyber-purple border border-cyber-purple/30 mb-4 inline-block">This Tool Made For The Connecticut Cannabis Small Business Alliance and it's Members</span>
+          <span className="text-xs font-cyber bg-cyber-purple/10 px-3 py-1 rounded-full text-cyber-purple border border-cyber-purple/30 mb-4 inline-block">This AI Tool Was Made For The Connecticut Cannabis Small Business Alliance and it's Members</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-cyber font-bold mb-3 md:mb-4">
             <span className="text-white">The </span>
             <span className="cyber-text-shadow text-cyber-green">CANNABIS GPT</span>
