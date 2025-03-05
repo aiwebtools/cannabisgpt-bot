@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Cannabis, Menu, X } from 'lucide-react';
+import { Cannabis, Heart, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
@@ -37,7 +37,14 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
-              <span className="text-xs text-gray-400">by <span className="text-cyber-green hover:text-cyber-green-light transition-colors">AiWebTools.Ai</span></span>
+              <a 
+                href="https://www.ctcannabisalliance.org" 
+                className="text-xs text-gray-400 hover:text-cyber-green flex items-center transition-colors"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Made with <Heart className="h-3 w-3 mx-1 text-cyber-pink fill-cyber-pink" /> for the Connecticut Cannabis Small Business Alliance
+              </a>
             </div>
           </a>
 
