@@ -1,7 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const VideoDemo = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <section className="py-16 relative overflow-hidden">
       {/* Background Elements */}
@@ -24,6 +26,11 @@ const VideoDemo = () => {
         </div>
         
         <div className="max-w-4xl mx-auto glassmorphism rounded-2xl p-1 border border-white/10 overflow-hidden">
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-cyber-dark/80 z-10">
+              <div className="h-12 w-12 border-4 border-t-cyber-green border-r-transparent border-b-cyber-purple border-l-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
             <iframe 
               src="https://player.vimeo.com/video/983288259?h=ee46a32dbe&autoplay=1&loop=0&title=0&byline=0&portrait=0&muted=0&quality=1080p" 
@@ -32,6 +39,7 @@ const VideoDemo = () => {
               allow="autoplay; fullscreen; picture-in-picture" 
               allowFullScreen
               title="CANNABIS GPT Demo Video"
+              onLoad={() => setIsLoading(false)}
             ></iframe>
           </div>
         </div>
