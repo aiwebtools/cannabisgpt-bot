@@ -47,8 +47,8 @@ const Header = () => {
                   AiWebTools.Ai
                 </a>
               </span>
-              <span className="text-[10px] text-gray-400">
-                Made with <Heart className="h-2.5 w-2.5 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for <a 
+              <span className="text-[8px] text-gray-400 whitespace-nowrap">
+                Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for <a 
                   href="https://www.ctcannabisalliance.org" 
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
