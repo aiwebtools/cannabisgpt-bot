@@ -42,7 +42,15 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-4">
+            <a 
+              href="https://www.ctcannabisalliance.org" 
+              className="cyber-button-purple text-sm"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              JOIN THE ALLIANCE
+            </a>
             <a 
               href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
               className="cyber-button text-sm"
@@ -84,6 +92,15 @@ const Header = () => {
         )}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
+          <a 
+            href="https://www.ctcannabisalliance.org" 
+            className="cyber-button-purple w-full text-center"
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            JOIN THE ALLIANCE
+          </a>
           <a 
             href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
             className="cyber-button w-full text-center"
