@@ -22,7 +22,7 @@ const SectionLoader = () => (
 
 const Index = () => {
   useEffect(() => {
-    document.title = "CANNABIS GPT | AI Cannabis Expert by AiWebTools.Ai";
+    document.title = "CANNABIS GPT | AI Cannabis & Hemp Expert by AiWebTools.Ai";
     
     // Preload components after initial render
     const preloadComponents = async () => {
