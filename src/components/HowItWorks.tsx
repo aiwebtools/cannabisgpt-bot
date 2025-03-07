@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SearchCheck, FileText, Lightbulb, ChevronRight } from 'lucide-react';
+import { SearchCheck, FileText, Lightbulb, ChevronRight, Eye, Mic, Code, Brain } from 'lucide-react';
 
 const steps = [
   {
@@ -26,6 +26,14 @@ const steps = [
     color: "text-cyber-green",
     bgColor: "bg-cyber-green/10",
     borderColor: "border-cyber-green/30"
+  },
+  {
+    icon: Brain,
+    title: "Access Multimodal Abilities",
+    description: "Utilize vision, voice, data analysis, coding, and more capabilities to excel your cannabis knowledge and business.",
+    color: "text-cyber-purple",
+    bgColor: "bg-cyber-purple/10",
+    borderColor: "border-cyber-purple/30"
   }
 ];
 
