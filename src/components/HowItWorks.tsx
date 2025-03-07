@@ -6,7 +6,7 @@ const steps = [
   {
     icon: SearchCheck,
     title: "Ask Any Cannabis Question",
-    description: "Start by asking about strain lineage, potency calculations, or regulatory information.",
+    description: "Start by asking about strain lineage, potency calculations, regulatory information, or Hemp farming and applications.",
     color: "text-cyber-green",
     bgColor: "bg-cyber-green/10",
     borderColor: "border-cyber-green/30"
@@ -22,7 +22,7 @@ const steps = [
   {
     icon: Lightbulb,
     title: "Receive Detailed Analysis",
-    description: "Receive comprehensive answers with visualizations, calculations, and expert guidance.",
+    description: "Receive comprehensive answers with visualizations, calculations, and expert guidance for both Cannabis and Hemp applications.",
     color: "text-cyber-green",
     bgColor: "bg-cyber-green/10",
     borderColor: "border-cyber-green/30"
@@ -30,7 +30,7 @@ const steps = [
   {
     icon: Brain,
     title: "Access Multimodal Abilities",
-    description: "Utilize vision, voice, data analysis, coding, and more capabilities to excel your cannabis knowledge and business.",
+    description: "Utilize vision, voice, data analysis, coding, and more capabilities to excel your cannabis and hemp knowledge and business.",
     color: "text-cyber-purple",
     bgColor: "bg-cyber-purple/10",
     borderColor: "border-cyber-purple/30"

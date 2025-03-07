@@ -25,6 +25,10 @@ const faqData: FAQItem[] = [
     answer: "Cannabis GPT can provide information about strain genetics, potency calculations, regulatory information, cultivation advice, and more. It combines AI knowledge with web search capabilities for comprehensive information."
   },
   {
+    question: "Can Cannabis GPT help with Hemp farming and applications?",
+    answer: "Absolutely! Since Hemp is Cannabis, Cannabis GPT is an excellent resource for Hemp farmers and businesses. It can provide valuable information on Hemp cultivation, processing, regulations, CBD extraction, industrial applications, textiles, and more Hemp-related topics."
+  },
+  {
     question: "Does using Cannabis GPT mean I'm using cannabis?",
     answer: "No. Cannabis GPT is an informational tool. Using it doesn't constitute using, possessing, distributing, or cultivating cannabis. It's designed for research and educational purposes only."
   }
