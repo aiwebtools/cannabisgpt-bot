@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Cannabis, Heart, Menu, X } from 'lucide-react';
+import { Cannabis, Heart, Menu, X, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
@@ -25,6 +25,12 @@ const Header = () => {
           : "py-5 bg-transparent"
       )}
     >
+      {/* Legal disclaimer banner */}
+      <div className="bg-cyber-purple/90 text-white py-1 text-xs text-center flex items-center justify-center">
+        <AlertTriangle className="h-3 w-3 mr-1.5 text-white" />
+        <p>21+ ONLY | For legal use in accordance with local laws | For educational and informational purposes only</p>
+      </div>
+      
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 group">
@@ -62,6 +68,12 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4">
+            <a 
+              href="#faq" 
+              className="text-white hover:text-cyber-green transition-colors text-sm"
+            >
+              FAQ
+            </a>
             <a 
               href="https://www.ctcannabisalliance.org" 
               className="cyber-button-purple text-sm"
@@ -111,6 +123,13 @@ const Header = () => {
         )}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
+          <a 
+            href="#faq" 
+            className="text-white hover:text-cyber-green transition-colors"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            FAQ
+          </a>
           <a 
             href="https://www.ctcannabisalliance.org" 
             className="cyber-button-purple w-full text-center"

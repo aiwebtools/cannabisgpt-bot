@@ -1,6 +1,7 @@
 
 import React, { useEffect, lazy, Suspense } from 'react';
 import Header from '@/components/Header';
+import AgeVerification from '@/components/AgeVerification';
 
 // Lazy-loaded components
 const Hero = lazy(() => import('@/components/Hero'));
@@ -8,6 +9,8 @@ const Features = lazy(() => import('@/components/Features'));
 const HowItWorks = lazy(() => import('@/components/HowItWorks'));
 const VideoDemo = lazy(() => import('@/components/VideoDemo'));
 const CTA = lazy(() => import('@/components/CTA'));
+const FAQ = lazy(() => import('@/components/FAQ'));
+const LegalDisclaimer = lazy(() => import('@/components/LegalDisclaimer'));
 const Footer = lazy(() => import('@/components/Footer'));
 
 // Loading fallback
@@ -33,6 +36,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-cyber-dark text-white overflow-hidden">
+      <AgeVerification />
       <Header />
       <main>
         <Suspense fallback={<SectionLoader />}>
@@ -48,7 +52,13 @@ const Index = () => {
           <VideoDemo />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
+          <FAQ />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
           <CTA />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <LegalDisclaimer />
         </Suspense>
       </main>
       <Suspense fallback={<SectionLoader />}>
