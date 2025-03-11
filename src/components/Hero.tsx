@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import { Cannabis } from 'lucide-react';
 const Hero = () => {
@@ -120,7 +121,7 @@ const Hero = () => {
               <span className="text-white"> Intelligence Assistant</span>
             </h1>
             
-            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">Deep expertise in strain genetics, potency calculations, regulatory information, and cultivation advice - all enhanced with web search capabilities, data analysis, vision, and YouTube video integration.</p>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">Featuring comprehensive knowledge of strain genetics, precise potency calculations, up-to-date regulatory insights, and expert cultivation guidance — all enhanced with advanced web search capabilities, real-time data analysis, visual recognition, and seamless YouTube video integration.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" className="cyber-button w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
