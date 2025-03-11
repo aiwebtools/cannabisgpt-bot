@@ -131,8 +131,11 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm text-center">
             &copy; {new Date().getFullYear()} AiWebTools.Ai. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-400 text-center">
+            Made with ❤️ for the Connecticut Cannabis Small Business Alliance
           </p>
           <div className="flex gap-6">
             <a 

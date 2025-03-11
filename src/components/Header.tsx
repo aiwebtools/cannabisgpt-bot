@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Cannabis, Heart, Menu, X, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -43,25 +42,11 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
-              <span className="text-xs text-gray-400">
-                Presented by <a 
-                  href="https://www.aiwebtools.ai" 
-                  className="text-cyber-green hover:text-cyber-green-light transition-colors"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  AiWebTools.Ai
-                </a>
+              <span className="text-xs text-gray-400 hidden sm:block">
+                AI POWERED CANNABIS EXPERTISE
               </span>
-              <span className="text-[8px] text-gray-400 whitespace-nowrap">
-                Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for <a 
-                  href="https://www.ctcannabisalliance.org" 
-                  className="hover:text-cyber-green transition-colors"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  the Connecticut Cannabis Small Business Alliance
-                </a>
+              <span className="text-[8px] text-gray-400 hidden sm:block whitespace-nowrap">
+                Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for the Connecticut Cannabis Small Business Alliance
               </span>
             </div>
           </a>
