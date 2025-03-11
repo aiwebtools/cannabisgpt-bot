@@ -134,7 +134,7 @@ const Header = () => {
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
           >
-            GET STARTED
+            ACCESS CANNABIS GPT NOW
           </a>
           <a 
             href="https://www.aiwebtools.ai" 
