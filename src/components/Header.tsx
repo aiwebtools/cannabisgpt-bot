@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Cannabis, Heart, Menu, X, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -42,12 +43,14 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
-              <span className="text-xs text-gray-400 hidden sm:block">
-                AI POWERED CANNABIS EXPERTISE
-              </span>
-              <span className="text-[8px] text-gray-400 hidden sm:block whitespace-nowrap">
-                Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for the Connecticut Cannabis Small Business Alliance
-              </span>
+              <div className="flex flex-col mt-1">
+                <span className="text-xs text-gray-400 hidden sm:block">
+                  AI POWERED CANNABIS EXPERTISE
+                </span>
+                <span className="text-[8px] text-gray-400 hidden sm:block whitespace-nowrap">
+                  Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for the Connecticut Cannabis Small Business Alliance
+                </span>
+              </div>
             </div>
           </a>
 
