@@ -44,10 +44,10 @@ const Header = () => {
             <div className="flex flex-col">
               <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
               <div className="flex flex-col mt-1">
-                <span className="text-xs text-gray-400 hidden sm:block">
+                <span className="text-xs text-gray-400 block">
                   AI POWERED CANNABIS EXPERTISE
                 </span>
-                <span className="text-[8px] text-gray-400 hidden sm:block whitespace-nowrap">
+                <span className="text-[8px] text-gray-400 block whitespace-nowrap">
                   Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for the Connecticut Cannabis Small Business Alliance
                 </span>
               </div>
@@ -110,6 +110,17 @@ const Header = () => {
           mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full pointer-events-none"
         )}
       >
+        {/* Close button at the top of the mobile menu */}
+        <div className="absolute top-4 right-4">
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="h-10 w-10 rounded-full flex items-center justify-center bg-cyber-dark border border-cyber-green/30"
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6 text-cyber-green" />
+          </button>
+        </div>
+        
         <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
           <a 
             href="#faq" 
