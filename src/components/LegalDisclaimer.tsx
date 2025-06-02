@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, AlertTriangle } from 'lucide-react';
 
@@ -10,6 +9,7 @@ const LegalDisclaimer = () => {
           <div className="flex flex-col items-center mb-6">
             <Shield className="h-8 w-8 text-cyber-purple mb-2" />
             <h2 className="text-2xl font-cyber text-white text-center">Legal Disclaimer</h2>
+            <p className="text-sm text-gray-400 mt-2 text-center">For informational, educational, and research purposes only</p>
           </div>
           
           <div className="glassmorphism border border-cyber-purple/20 rounded-xl p-6">

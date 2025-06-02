@@ -28,6 +28,10 @@ const Footer = () => {
               Your ultimate cannabis intelligence assistant powered by AI. Get comprehensive strain information, potency calculations, and expert guidance.
             </p>
             
+            <p className="text-xs text-gray-500 max-w-lg">
+              For informational, educational, and research purposes only.
+            </p>
+            
             <div className="flex gap-4">
               <a 
                 href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
@@ -83,7 +87,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://aiwebtools.ai/terms-of-services" 
+                  href="https://aiwebtools.lovable.app/disclaimers" 
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -147,7 +151,7 @@ const Footer = () => {
               Privacy Policy
             </a>
             <a 
-              href="https://aiwebtools.ai/terms-of-services" 
+              href="https://aiwebtools.lovable.app/disclaimers" 
               className="text-gray-500 hover:text-cyber-green text-sm transition-colors"
               target="_blank" 
               rel="noopener noreferrer"
