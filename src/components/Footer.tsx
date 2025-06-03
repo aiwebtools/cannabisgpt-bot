@@ -78,6 +78,17 @@ const Footer = () => {
               </li>
               <li>
                 <a 
+                  href="https://linktr.ee/ctcannabisalliance/?via=aiwebtools"
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="Other Cannabis Related GPTs"
+                >
+                  Other Cannabis Related GPTs
+                </a>
+              </li>
+              <li>
+                <a 
                   href="https://www.aiwebtools.ai" 
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
