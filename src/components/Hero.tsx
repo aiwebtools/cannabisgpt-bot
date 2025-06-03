@@ -132,10 +132,6 @@ const Hero = () => {
               Featuring comprehensive strain genetics knowledge, precise potency calculations, up-to-date regulatory insights, 
               and expert cultivation guidance. Official AI tools partner of the Connecticut Cannabis Small Business Alliance (CCSBA).
             </p>
-
-            <div className="text-sm text-gray-400 max-w-2xl mx-auto lg:mx-0">
-              <strong className="text-cyber-green">Keywords:</strong> AI Web Tools, Cannabis AI, CCSBA Tools, AiWebTools.Ai, Premium Cannabis Technology
-            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
@@ -179,6 +175,15 @@ const Hero = () => {
                 <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyber-green/20 rounded-full blur-3xl"></div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Keywords moved to bottom - less prominent */}
+      <div className="absolute bottom-8 left-0 right-0 z-10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-xs text-gray-500/60 text-center">
+            <strong className="text-cyber-green/70">Keywords:</strong> AI Web Tools, Cannabis AI, CCSBA Tools, AiWebTools.Ai, Premium Cannabis Technology
           </div>
         </div>
       </div>
