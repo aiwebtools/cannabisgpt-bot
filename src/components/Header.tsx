@@ -42,7 +42,15 @@ const Header = () => {
               <div className="absolute inset-0 bg-glow-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="flex flex-col">
-              <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
+              <span className="font-cyber text-xl text-white tracking-wide relative">
+                <span className="relative z-10 bg-gradient-to-r from-cyber-green via-cyber-green-light to-cyber-green bg-clip-text text-transparent animate-pulse-glow">
+                  CANNABIS GPT
+                </span>
+                <span className="absolute inset-0 text-cyber-green animate-glow blur-sm opacity-50">
+                  CANNABIS GPT
+                </span>
+                <span className="absolute inset-0 border-2 border-cyber-green/30 rounded-md animate-pulse-glow pointer-events-none"></span>
+              </span>
               <div className="flex flex-col mt-1">
                 {/* Adjusted text for better mobile display */}
                 <span className="text-xs text-gray-400 block leading-tight">
