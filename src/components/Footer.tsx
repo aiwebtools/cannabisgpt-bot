@@ -20,17 +20,25 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
-                <span className="text-xs text-gray-400">Presented by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors">AiWebTools.Ai</a></span>
+                <span className="text-xs text-gray-400">Premium AI Web Tools by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors">AiWebTools.Ai</a></span>
               </div>
             </a>
             
-            <p className="text-gray-400 max-w-lg">
-              Your ultimate cannabis intelligence assistant powered by AI. Get comprehensive strain information, potency calculations, and expert guidance.
-            </p>
-            
-            <p className="text-xs text-gray-500 max-w-lg">
-              For informational, educational, and research purposes only.
-            </p>
+            <div>
+              <p className="text-gray-400 max-w-lg mb-2">
+                Your ultimate cannabis intelligence assistant powered by AiWebTools.Ai. Premium AI web tools featuring comprehensive strain information, potency calculations, and expert guidance for cannabis professionals and CCSBA members.
+              </p>
+              
+              <p className="text-xs text-gray-500 max-w-lg mb-3">
+                For informational, educational, and research purposes only.
+              </p>
+
+              <div className="text-xs text-gray-500 space-y-1">
+                <p><strong className="text-cyber-green">AI Web Tools:</strong> Cannabis AI, Strain Genetics, Potency Calculator</p>
+                <p><strong className="text-cyber-green">CCSBA Partner:</strong> Connecticut Cannabis Small Business Alliance</p>
+                <p><strong className="text-cyber-green">AiWebTools.Ai:</strong> Premium AI Tools & Cannabis Technology</p>
+              </div>
+            </div>
             
             <div className="flex gap-4">
               <a 
@@ -38,6 +46,7 @@ const Footer = () => {
                 className="cyber-button text-sm"
                 target="_blank" 
                 rel="noopener noreferrer"
+                title="Access Cannabis GPT AI Tools"
               >
                 GET STARTED
               </a>
@@ -46,6 +55,7 @@ const Footer = () => {
                 className="cyber-button-purple text-sm"
                 target="_blank" 
                 rel="noopener noreferrer"
+                title="More AI Web Tools by AiWebTools.Ai"
               >
                 MORE AI TOOLS
               </a>
@@ -53,7 +63,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-3 space-y-4">
-            <h3 className="font-cyber text-lg text-white">Links</h3>
+            <h3 className="font-cyber text-lg text-white">AI Web Tools</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
                 <a 
@@ -61,8 +71,9 @@ const Footer = () => {
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
                   rel="noopener noreferrer"
+                  title="Cannabis GPT AI Tools"
                 >
-                  Get Started
+                  Cannabis GPT
                 </a>
               </li>
               <li>
@@ -71,8 +82,20 @@ const Footer = () => {
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
                   rel="noopener noreferrer"
+                  title="AiWebTools.Ai - Premium AI Tools"
                 >
-                  More AI Tools
+                  AiWebTools.Ai
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.ctcannabisalliance.org" 
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="Connecticut Cannabis Small Business Alliance - CCSBA"
+                >
+                  CCSBA Partnership
                 </a>
               </li>
               <li>
@@ -99,12 +122,13 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-4 space-y-4">
-            <h3 className="font-cyber text-lg text-white">Contact</h3>
+            <h3 className="font-cyber text-lg text-white">Contact AiWebTools.Ai</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
                 <a 
                   href="tel:4758008096" 
                   className="flex items-center gap-2 hover:text-cyber-green transition-colors"
+                  title="Call AiWebTools.Ai"
                 >
                   <Phone className="h-4 w-4 text-cyber-green" />
                   <span>(475) 800-8096</span>
@@ -114,6 +138,7 @@ const Footer = () => {
                 <a 
                   href="mailto:Contact@ai-webtools.com" 
                   className="flex items-center gap-2 hover:text-cyber-green transition-colors"
+                  title="Email AiWebTools.Ai"
                 >
                   <Mail className="h-4 w-4 text-cyber-green" />
                   <span>Contact@ai-webtools.com</span>
@@ -121,25 +146,30 @@ const Footer = () => {
               </li>
             </ul>
             
-            <div className="mt-6">
+            <div className="mt-6 space-y-2">
               <a 
                 href="https://www.aiwebtools.ai" 
                 className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple hover:text-cyber-purple-light transition-colors"
                 target="_blank" 
                 rel="noopener noreferrer"
+                title="Explore AI Web Tools by AiWebTools.Ai"
               >
-                More AI Tools
+                Explore AI Web Tools
               </a>
+              
+              <div className="text-xs text-gray-500">
+                <p>Keywords: AI Tools, Cannabis AI, CCSBA, AiWebTools.Ai</p>
+              </div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm text-center">
-            &copy; {new Date().getFullYear()} AiWebTools.Ai. All rights reserved.
+            &copy; {new Date().getFullYear()} AiWebTools.Ai. All rights reserved. Premium AI Web Tools for Cannabis Professionals.
           </p>
           <p className="text-xs text-gray-400 text-center">
-            Made with ❤️ for the Connecticut Cannabis Small Business Alliance
+            Made with ❤️ for the Connecticut Cannabis Small Business Alliance (CCSBA)
           </p>
           <div className="flex gap-6">
             <a 

@@ -1,8 +1,10 @@
 
 import React, { useRef, useEffect } from 'react';
 import { Cannabis } from 'lucide-react';
+
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
@@ -100,36 +102,69 @@ const Hero = () => {
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
-  return <section className="relative min-h-screen overflow-hidden pt-24 pb-16">
+
+  return (
+    <section className="relative min-h-screen overflow-hidden pt-24 pb-16">
       {/* 3D Particles Canvas in background */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{
-      pointerEvents: 'none'
-    }} />
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 w-full h-full" 
+        style={{ pointerEvents: 'none' }}
+        aria-hidden="true"
+      />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center justify-center min-h-[90vh]">
         <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-12 items-center">
           <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left animate-fade-in">
             <div className="inline-block">
               <span className="text-xs font-cyber bg-cyber-green/10 px-3 py-1 rounded-full text-cyber-green border border-cyber-green/30">
-                AI-POWERED CANNABIS EXPERTISE
+                AI WEB TOOLS BY AIWEBTOOLS.AI
               </span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cyber font-bold tracking-tight leading-tight">
-              <span className="text-white">Your Ultimate </span>  
-              <span className="cyber-text-shadow text-cyber-green">Cannabis</span>
-              <span className="text-white"> Intelligence Assistant</span>
+              <span className="text-white">Premium </span>  
+              <span className="cyber-text-shadow text-cyber-green">Cannabis AI Tools</span>
+              <span className="text-white"> for CCSBA Members</span>
             </h1>
             
-            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">Featuring comprehensive knowledge of strain genetics, precise potency calculations, up-to-date regulatory insights, and expert cultivation guidance — all enhanced with advanced web search capabilities, real-time data analysis, visual recognition, and seamless YouTube video integration.</p>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">
+              AiWebTools.Ai presents Cannabis GPT - the most advanced AI web tools for cannabis professionals. 
+              Featuring comprehensive strain genetics knowledge, precise potency calculations, up-to-date regulatory insights, 
+              and expert cultivation guidance. Official AI tools partner of the Connecticut Cannabis Small Business Alliance (CCSBA).
+            </p>
+
+            <div className="text-sm text-gray-400 max-w-2xl mx-auto lg:mx-0">
+              <strong className="text-cyber-green">Keywords:</strong> AI Web Tools, Cannabis AI, CCSBA Tools, AiWebTools.Ai, Premium Cannabis Technology
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" className="cyber-button w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-                GET STARTED
+              <a 
+                href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+                className="cyber-button w-full sm:w-auto" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                title="Access Cannabis GPT AI Tools by AiWebTools.Ai"
+              >
+                ACCESS AI TOOLS NOW
               </a>
-              <a href="https://www.aiwebtools.ai" className="cyber-button-purple w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-                MORE AI TOOLS
+              <a 
+                href="https://www.aiwebtools.ai" 
+                className="cyber-button-purple w-full sm:w-auto" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                title="Explore More AI Web Tools by AiWebTools.Ai"
+              >
+                MORE AI WEB TOOLS
               </a>
+            </div>
+
+            <div className="flex flex-wrap gap-2 justify-center lg:justify-start text-xs text-gray-500">
+              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#AiWebTools</span>
+              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CannabisAI</span>
+              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CCSBA</span>
+              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#AITools</span>
+              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CannabisGPT</span>
             </div>
           </div>
           
@@ -137,7 +172,10 @@ const Hero = () => {
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full bg-glow-green animate-pulse-glow"></div>
               <div className="glassmorphism rounded-2xl p-8 h-full w-full flex items-center justify-center relative overflow-hidden border border-cyber-green/20">
-                <Cannabis className="h-28 w-28 sm:h-36 sm:w-36 text-cyber-green animate-glow" />
+                <Cannabis 
+                  className="h-28 w-28 sm:h-36 sm:w-36 text-cyber-green animate-glow" 
+                  aria-label="Cannabis GPT AI Tools Logo"
+                />
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyber-purple/20 rounded-full blur-3xl"></div>
                 <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyber-green/20 rounded-full blur-3xl"></div>
               </div>
@@ -148,6 +186,8 @@ const Hero = () => {
       
       {/* Gradient overlay at bottom for transition */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cyber-dark to-transparent"></div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
