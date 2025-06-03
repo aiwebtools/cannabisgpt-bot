@@ -1,191 +1,96 @@
 
-import React, { useRef, useEffect } from 'react';
-import { Cannabis } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Sparkles, Cannabis } from 'lucide-react';
 
 const Hero = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // Make canvas fill parent element
-    const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Particle system for 3D effect
-    // Reduce particle count on mobile for better performance
-    const isMobile = window.innerWidth < 768;
-    const particles: {
-      x: number;
-      y: number;
-      z: number;
-      size: number;
-      speed: number;
-      color: string;
-    }[] = [];
-    const particleCount = isMobile ? 50 : 100;
-
-    // Create particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        z: Math.random() * 1000,
-        // depth
-        size: Math.random() * 2 + 0.5,
-        speed: Math.random() * 0.5 + 0.2,
-        color: Math.random() > 0.5 ? '#39ff14' : '#9b30ff'
-      });
-    }
-
-    // Animation loop
-    const animate = () => {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw grid with reduced density on mobile
-      ctx.lineWidth = 0.3;
-      ctx.strokeStyle = 'rgba(57, 255, 20, 0.1)';
-      const gridSize = isMobile ? 40 : 30;
-
-      // Horizontal lines
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-
-      // Vertical lines
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-
-      // Update and draw particles
-      particles.forEach(particle => {
-        // Update depth (z-coordinate)
-        particle.z -= particle.speed;
-
-        // Reset particle when it gets too close (out of view)
-        if (particle.z <= 0) {
-          particle.z = 1000;
-          particle.x = Math.random() * canvas.width;
-          particle.y = Math.random() * canvas.height;
-        }
-
-        // Calculate position based on perspective
-        const scale = 1000 / (1000 + particle.z);
-        const x2d = particle.x * scale + canvas.width / 2 * (1 - scale);
-        const y2d = particle.y * scale + canvas.height / 2 * (1 - scale);
-
-        // Draw particle
-        ctx.globalAlpha = scale * 0.8; // Fade with distance
-        ctx.beginPath();
-        ctx.arc(x2d, y2d, particle.size * scale, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color;
-        ctx.fill();
-      });
-      requestAnimationFrame(animate);
-    };
-    animate();
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, []);
-
   return (
-    <section className="relative min-h-screen overflow-hidden pt-24 pb-16">
-      {/* 3D Particles Canvas in background */}
-      <canvas 
-        ref={canvasRef} 
-        className="absolute inset-0 w-full h-full" 
-        style={{ pointerEvents: 'none' }}
-        aria-hidden="true"
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 grid-bg"></div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center justify-center min-h-[90vh]">
-        <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left animate-fade-in">
-            <div className="inline-block">
-              <span className="text-xs font-cyber bg-cyber-green/10 px-3 py-1 rounded-full text-cyber-green border border-cyber-green/30">
-                AI WEB TOOLS BY AIWEBTOOLS.AI
-              </span>
-            </div>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cyber font-bold tracking-tight leading-tight">
-              <span className="text-white">Premium </span>  
-              <span className="cyber-text-shadow text-cyber-green">Cannabis AI Tools</span>
-              <span className="text-white"> for CCSBA Members</span>
-            </h1>
-            
-            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">
-              AiWebTools.Ai presents Cannabis GPT - the most advanced AI web tools for cannabis professionals. 
-              Featuring comprehensive strain genetics knowledge, precise potency calculations, up-to-date regulatory insights, 
-              and expert cultivation guidance. Official AI tools partner of the Connecticut Cannabis Small Business Alliance (CCSBA).
-            </p>
-
-            <div className="text-sm text-gray-400 max-w-2xl mx-auto lg:mx-0">
-              <strong className="text-cyber-green">Keywords:</strong> AI Web Tools, Cannabis AI, CCSBA Tools, AiWebTools.Ai, Premium Cannabis Technology
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a 
-                href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
-                className="cyber-button w-full sm:w-auto" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                title="Access Cannabis GPT AI Tools by AiWebTools.Ai"
-              >
-                ACCESS AI TOOLS NOW
-              </a>
-              <a 
-                href="https://www.aiwebtools.ai" 
-                className="cyber-button-purple w-full sm:w-auto" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                title="Explore More AI Web Tools by AiWebTools.Ai"
-              >
-                MORE AI WEB TOOLS
-              </a>
-            </div>
-
-            <div className="flex flex-wrap gap-2 justify-center lg:justify-start text-xs text-gray-500">
-              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#AiWebTools</span>
-              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CannabisAI</span>
-              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CCSBA</span>
-              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#AITools</span>
-              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CannabisGPT</span>
-            </div>
+      {/* Animated background elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-cyber-green/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyber-purple/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyber-green/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      
+      <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-cyber-purple/10 px-4 py-2 rounded-full text-cyber-purple border border-cyber-purple/30 animate-fade-in">
+            <Sparkles className="h-4 w-4" />
+            <span className="text-xs font-cyber">PREMIER AI WEB TOOLS BY AIWEBTOOLS.AI FOR CANNABIS PROFESSIONALS</span>
           </div>
           
-          <div className="lg:col-span-5 flex justify-center lg:justify-end animate-float">
-            <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-glow-green animate-pulse-glow"></div>
-              <div className="glassmorphism rounded-2xl p-8 h-full w-full flex items-center justify-center relative overflow-hidden border border-cyber-green/20">
-                <Cannabis 
-                  className="h-28 w-28 sm:h-36 sm:w-36 text-cyber-green animate-glow" 
-                  aria-label="Cannabis GPT AI Tools Logo"
-                />
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyber-purple/20 rounded-full blur-3xl"></div>
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyber-green/20 rounded-full blur-3xl"></div>
-              </div>
+          {/* Main headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cyber font-bold leading-tight animate-slide-up">
+            <span className="text-white">Meet </span>
+            <span className="cyber-text-shadow text-cyber-green">CANNABIS GPT</span>
+            <br />
+            <span className="text-white">Your AI </span>
+            <span className="cyber-text-shadow text-cyber-purple">Cannabis Expert</span>
+          </h1>
+          
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            Professional AI Web Tools by <strong className="text-cyber-green">AiWebTools.Ai</strong> featuring advanced strain analysis, potency calculations, regulatory guidance, and expert Cannabis & Hemp consultation powered by cutting-edge AI technology for CCSBA members and cannabis professionals.
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-slide-up" style={{ animationDelay: '1s' }}>
+            <a 
+              href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+              className="cyber-button group inline-flex items-center gap-2 text-lg px-8 py-4"
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Access Cannabis GPT AI Tools by AiWebTools.Ai"
+            >
+              <Cannabis className="h-5 w-5" />
+              <span>CANNABIS GPT - Welcome to the Age of the Green Leaf</span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            
+            <a 
+              href="https://www.aiwebtools.ai" 
+              className="cyber-button-purple group inline-flex items-center gap-2 text-lg px-8 py-4"
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Explore More AI Web Tools by AiWebTools.Ai"
+            >
+              <Sparkles className="h-5 w-5" />
+              <span>EXPLORE AI WEB TOOLS</span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className="pt-8 space-y-4 animate-fade-in" style={{ animationDelay: '1.5s' }}>
+            <p className="text-sm text-gray-400">
+              Trusted by Cannabis Professionals • CCSBA Partnership • AiWebTools.Ai Premium AI Tools
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-xs text-gray-500">
+              <span className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-cyber-green rounded-full"></div>
+                AI-Powered Cannabis Intelligence
+              </span>
+              <span className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-cyber-purple rounded-full"></div>
+                Professional Grade AI Web Tools
+              </span>
+              <span className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-cyber-green rounded-full"></div>
+                CCSBA Approved Technology
+              </span>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Gradient overlay at bottom for transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cyber-dark to-transparent"></div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-cyber-green/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-cyber-green rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
     </section>
   );
 };
