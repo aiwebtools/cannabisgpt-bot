@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Cannabis, Mail, Phone } from 'lucide-react';
 
@@ -26,7 +25,7 @@ const Footer = () => {
             
             <div>
               <p className="text-gray-400 max-w-lg mb-2">
-                Your ultimate cannabis intelligence assistant powered by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. Premium AI web tools featuring comprehensive strain information, potency calculations, and expert guidance for cannabis professionals and CCSBA members.
+                Your ultimate cannabis intelligence assistant powered by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. Premium AI web tools featuring comprehensive strain information, potency calculations, and expert guidance for cannabis professionals and <a href="https://www.ctcannabisalliance.org" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">CCSBA</a> members.
               </p>
               
               <p className="text-xs text-gray-500 max-w-lg mb-3">
@@ -35,7 +34,7 @@ const Footer = () => {
 
               <div className="text-xs text-gray-500 space-y-1">
                 <p><strong className="text-cyber-green">AI Web Tools:</strong> Cannabis AI, Strain Genetics, Potency Calculator</p>
-                <p><strong className="text-cyber-green">CCSBA Partner:</strong> Connecticut Cannabis Small Business Alliance</p>
+                <p><strong className="text-cyber-green">CCSBA Partner:</strong> <a href="https://www.ctcannabisalliance.org" className="hover:text-cyber-green transition-colors" target="_blank" rel="noopener noreferrer">Connecticut Cannabis Small Business Alliance</a></p>
                 <p><strong className="text-cyber-green"><a href="https://www.aiwebtools.ai" className="hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>:</strong> Premium AI Tools & Cannabis Technology</p>
               </div>
             </div>
@@ -180,7 +179,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. All rights reserved. Premium AI Web Tools for Cannabis Professionals.
           </p>
           <p className="text-xs text-gray-400 text-center">
-            Made with ❤️ for the Connecticut Cannabis Small Business Alliance (CCSBA)
+            Made with ❤️ for the <a href="https://www.ctcannabisalliance.org" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">Connecticut Cannabis Small Business Alliance (CCSBA)</a>
           </p>
           <div className="flex gap-6">
             <a 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SearchCheck, FileText, Lightbulb, ChevronRight, Eye, Mic, Code, Brain } from 'lucide-react';
+import { SearchCheck, FileText, Lightbulb, ChevronRight, Eye, Mic, Code, Brain, Zap } from 'lucide-react';
 
 const steps = [
   {
@@ -44,6 +44,25 @@ const HowItWorks = () => {
       <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-cyber-purple/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* New Button Section */}
+        <div className="text-center mb-12 md:mb-16">
+          <a 
+            href="https://linktr.ee/ctcannabisalliance/?via=aiwebtools"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyber-purple/20 to-cyber-green/20 border border-cyber-purple/30 rounded-full hover:from-cyber-purple/30 hover:to-cyber-green/30 hover:border-cyber-green/50 transition-all duration-300 transform hover:scale-105 hover:shadow-neon-purple"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Zap className="h-5 w-5 text-cyber-purple group-hover:text-cyber-green transition-colors duration-300" />
+            <span className="font-cyber text-sm md:text-base bg-gradient-to-r from-cyber-purple to-cyber-green bg-clip-text text-transparent group-hover:from-cyber-green group-hover:to-cyber-purple transition-all duration-300">
+              EXPLORE ELITE CANNABIS AI COLLECTION
+            </span>
+            <div className="w-2 h-2 bg-cyber-green rounded-full animate-pulse group-hover:bg-cyber-purple transition-colors duration-300"></div>
+          </a>
+          <p className="text-xs text-gray-500 mt-3 max-w-md mx-auto">
+            Discover premium cannabis AI tools curated by the Connecticut Cannabis Small Business Alliance
+          </p>
+        </div>
+
         <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
           <span className="text-xs font-cyber bg-cyber-purple/10 px-3 py-1 rounded-full text-cyber-purple border border-cyber-purple/30 mb-4 inline-block animate-fade-in">
             SIMPLE TO USE
