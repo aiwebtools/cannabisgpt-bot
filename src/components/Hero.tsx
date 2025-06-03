@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Cannabis } from 'lucide-react';
 
@@ -146,7 +145,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 title="Access Cannabis GPT AI Tools by AiWebTools.Ai"
               >
-                ACCESS AI TOOLS NOW
+                CANNABIS GPT
               </a>
               <a 
                 href="https://www.aiwebtools.ai" 
