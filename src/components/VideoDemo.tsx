@@ -17,17 +17,25 @@ const VideoDemo = () => {
           <p className="text-gray-300 text-sm md:text-base">Cannabis GPT Can Revolutionize Your Legal Cannabis & Hemp Business Operations</p>
         </div>
         
-        <div className="max-w-4xl mx-auto glassmorphism rounded-2xl p-1 border border-white/10 overflow-hidden">
+        {/* First Video */}
+        <div className="max-w-4xl mx-auto glassmorphism rounded-2xl p-1 border border-white/10 overflow-hidden mb-8">
           {isLoading && <div className="absolute inset-0 flex items-center justify-center bg-cyber-dark/80 z-10">
               <div className="h-10 w-10 md:h-12 md:w-12 border-4 border-t-cyber-green border-r-transparent border-b-cyber-purple border-l-transparent rounded-full animate-spin"></div>
             </div>}
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
-            <iframe src="https://player.vimeo.com/video/983288259?h=ee46a32dbe&autoplay=1&loop=0&title=0&byline=0&portrait=0&muted=0&quality=1080p" className="absolute top-0 left-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="CANNABIS GPT Demo Video" onLoad={() => setIsLoading(false)}></iframe>
+            <iframe src="https://player.vimeo.com/video/1132373393?autoplay=1&loop=0&title=0&byline=0&portrait=0&muted=0&quality=1080p" className="absolute top-0 left-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="CANNABIS GPT Introduction" onLoad={() => setIsLoading(false)}></iframe>
+          </div>
+        </div>
+
+        {/* Second Video */}
+        <div className="max-w-4xl mx-auto glassmorphism rounded-2xl p-1 border border-white/10 overflow-hidden">
+          <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
+            <iframe src="https://player.vimeo.com/video/983288259?h=ee46a32dbe&autoplay=0&loop=0&title=0&byline=0&portrait=0&muted=0&quality=1080p" className="absolute top-0 left-0 w-full h-full" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="CANNABIS GPT Demo Video"></iframe>
           </div>
         </div>
         
         <div className="mt-6 md:mt-8 text-center">
-          <a href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" className="cyber-button inline-flex items-center gap-2 group" target="_blank" rel="noopener noreferrer">
+          <a href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" className="cyber-button inline-flex items-center gap-2 group" target="_blank" rel="noopener noreferrer">
             <span>TRY IT YOURSELF</span>
           </a>
         </div>
