@@ -80,12 +80,12 @@ const Header = () => {
               JOIN THE ALLIANCE
             </a>
             <a 
-              href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+              href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
               className="cyber-button text-sm"
               target="_blank" 
               rel="noopener noreferrer"
             >
-              GET STARTED
+              USE CANNABIS GPT
             </a>
             <a 
               href="https://www.aiwebtools.ai" 
@@ -147,13 +147,13 @@ const Header = () => {
             JOIN THE ALLIANCE
           </a>
           <a 
-            href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+            href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
             className="cyber-button w-full text-center"
             target="_blank" 
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
           >
-            ACCESS CANNABIS GPT NOW
+            USE CANNABIS GPT
           </a>
           <a 
             href="https://www.aiwebtools.ai" 
