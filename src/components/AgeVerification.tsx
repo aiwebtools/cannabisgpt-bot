@@ -7,7 +7,6 @@ const AgeVerification = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   useEffect(() => {
-    // Check if user has already verified their age
     const hasVerified = localStorage.getItem('cannabis-gpt-age-verified');
     
     if (!hasVerified) {
@@ -21,8 +20,7 @@ const AgeVerification = () => {
   };
   
   const handleDecline = () => {
-    // Redirect to a safe page or show a message
-    window.location.href = 'https://www.aiwebtools.ai';
+    window.location.href = 'https://aiwebtools.lovable.app/?via=aiwebtools';
   };
   
   if (!isOpen) return null;
@@ -35,17 +33,17 @@ const AgeVerification = () => {
           <h2 className="text-xl font-cyber text-white">Age Verification Required</h2>
         </div>
         
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="flex items-start mb-6">
             <AlertTriangle className="h-6 w-6 text-cyber-purple mr-3 mt-1 flex-shrink-0" />
             <div>
               <h3 className="text-white font-medium mb-2">Legal Disclaimer</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 text-sm sm:text-base">
                 Cannabis GPT is intended for adults 21+ in jurisdictions where cannabis is legal. 
                 This tool is for educational and informational purposes only.
               </p>
               
-              <div className="bg-black/30 p-4 rounded-lg border border-white/10 mb-4">
+              <div className="bg-black/30 p-3 sm:p-4 rounded-lg border border-white/10 mb-4">
                 <p className="text-white text-sm mb-2">By clicking "I AGREE" you confirm that:</p>
                 <ul className="text-gray-300 text-sm space-y-2 ml-5">
                   <li className="flex items-start">
@@ -69,7 +67,7 @@ const AgeVerification = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-end">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-end">
             <button 
               onClick={handleDecline}
               className="order-2 sm:order-1 px-6 py-3 bg-transparent hover:bg-cyber-purple/10 text-white border border-white/10 rounded-lg flex items-center justify-center transition-colors"

@@ -32,7 +32,7 @@ const CTA = () => {
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a 
-                  href="https://www.aiwebtools.ai" 
+                  href="https://aiwebtools.lovable.app/?via=aiwebtools" 
                   className="cyber-button-purple w-full sm:w-auto text-center"
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -49,23 +49,23 @@ const CTA = () => {
                   <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-green/30 to-transparent"></div>
                   <ul className="text-xs md:text-sm text-gray-300 space-y-2 md:space-y-3 w-full">
                     <li className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green flex-shrink-0"></div>
                       <span>Strain genealogy analysis</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green flex-shrink-0"></div>
                       <span>Potency calculations</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green flex-shrink-0"></div>
                       <span>Regulatory guidance</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green flex-shrink-0"></div>
                       <span>Video integrations</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-cyber-green flex-shrink-0"></div>
                       <span>Educational resources</span>
                     </li>
                   </ul>
