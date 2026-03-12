@@ -12,7 +12,7 @@ const LegalDisclaimer = () => {
             <p className="text-sm text-gray-400 mt-2 text-center">For informational, educational, and research purposes only</p>
           </div>
           
-          <div className="glassmorphism border border-cyber-purple/20 rounded-xl p-6">
+          <div className="glassmorphism border border-cyber-purple/20 rounded-xl p-4 sm:p-6">
             <div className="flex items-start mb-4">
               <AlertTriangle className="h-5 w-5 text-cyber-purple mr-2 mt-0.5 flex-shrink-0" />
               <p className="text-gray-300 text-sm">
@@ -49,18 +49,18 @@ const LegalDisclaimer = () => {
             </div>
           </div>
           
-          <div className="flex justify-center mt-6">
+          <div className="flex flex-col sm:flex-row justify-center mt-6 gap-4">
             <a 
               href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
-              className="cyber-button mr-4"
+              className="cyber-button text-center"
               target="_blank" 
               rel="noopener noreferrer"
             >
               I UNDERSTAND & WANT TO PROCEED
             </a>
             <a 
-              href="https://www.aiwebtools.ai" 
-              className="cyber-button-purple"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              className="cyber-button-purple text-center"
               target="_blank" 
               rel="noopener noreferrer"
             >

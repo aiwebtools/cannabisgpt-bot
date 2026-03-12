@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Cannabis, Heart, Menu, X, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -12,8 +12,22 @@ const Header = () => {
       setScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
   }, []);
 
   return (
@@ -21,28 +35,28 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
         scrolled 
-          ? "py-3 glassmorphism border-b border-white/10" 
-          : "py-5 bg-transparent"
+          ? "py-2 sm:py-3 glassmorphism border-b border-white/10" 
+          : "py-3 sm:py-5 bg-transparent"
       )}
     >
       {/* Legal disclaimer banner */}
-      <div className="bg-cyber-purple/90 text-white py-1 text-xs text-center flex items-center justify-center">
-        <AlertTriangle className="h-3 w-3 mr-1.5 text-white" />
-        <p>21+ ONLY | For legal use in accordance with local laws | For educational and informational purposes only</p>
+      <div className="bg-cyber-purple/90 text-white py-1 text-[10px] sm:text-xs text-center flex items-center justify-center px-2">
+        <AlertTriangle className="h-3 w-3 mr-1 sm:mr-1.5 text-white flex-shrink-0" />
+        <p className="truncate">21+ ONLY | For legal use in accordance with local laws | For educational and informational purposes only</p>
       </div>
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="relative h-10 w-10 overflow-hidden">
+          <a href="/" className="flex items-center gap-2 group min-w-0">
+            <div className="relative h-8 w-8 sm:h-10 sm:w-10 overflow-hidden flex-shrink-0">
               <Cannabis 
-                className="h-10 w-10 text-cyber-green group-hover:text-cyber-green-light transition-colors duration-300" 
+                className="h-8 w-8 sm:h-10 sm:w-10 text-cyber-green group-hover:text-cyber-green-light transition-colors duration-300" 
                 strokeWidth={1.5} 
               />
               <div className="absolute inset-0 bg-glow-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="flex flex-col">
-              <span className="font-cyber text-xl text-white tracking-wide relative">
+            <div className="flex flex-col min-w-0">
+              <span className="font-cyber text-base sm:text-xl text-white tracking-wide relative">
                 <span className="relative z-10 bg-gradient-to-r from-cyber-green via-cyber-green-light to-cyber-green bg-clip-text text-transparent animate-pulse-glow">
                   CANNABIS GPT
                 </span>
@@ -51,12 +65,11 @@ const Header = () => {
                 </span>
                 <span className="absolute inset-0 border-2 border-cyber-green/30 rounded-md animate-pulse-glow pointer-events-none"></span>
               </span>
-              <div className="flex flex-col mt-1">
-                {/* Adjusted text for better mobile display */}
-                <span className="text-xs text-gray-400 block leading-tight">
+              <div className="flex flex-col mt-0.5 sm:mt-1">
+                <span className="text-[10px] sm:text-xs text-gray-400 block leading-tight truncate">
                   AI POWERED CANNABIS EXPERTISE
                 </span>
-                <span className="text-[8px] text-gray-400 block leading-tight">
+                <span className="text-[7px] sm:text-[8px] text-gray-400 block leading-tight">
                   Made with <Heart className="h-2 w-2 inline mx-0.5 text-cyber-pink fill-cyber-pink" /> for the CT Cannabis Alliance
                 </span>
               </div>
@@ -64,7 +77,7 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-3 lg:gap-4">
             <a 
               href="#faq" 
               className="text-white hover:text-cyber-green transition-colors text-sm"
@@ -73,7 +86,7 @@ const Header = () => {
             </a>
             <a 
               href="https://www.ctcannabisalliance.org" 
-              className="cyber-button-purple text-sm"
+              className="cyber-button-purple text-sm whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -81,15 +94,15 @@ const Header = () => {
             </a>
             <a 
               href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
-              className="cyber-button text-sm"
+              className="cyber-button text-sm whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
             >
               USE CANNABIS GPT
             </a>
             <a 
-              href="https://www.aiwebtools.ai" 
-              className="cyber-button-purple text-sm"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              className="cyber-button-purple text-sm whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -99,7 +112,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden flex items-center justify-center h-10 w-10 rounded-md text-white focus:outline-none"
+            className="md:hidden flex items-center justify-center h-10 w-10 rounded-md text-white focus:outline-none active:scale-95 transition-transform touch-manipulation"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -112,55 +125,56 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Full screen overlay */}
       <div 
         className={cn(
-          "md:hidden fixed inset-0 z-40 bg-cyber-darker/90 backdrop-blur-lg transition-all duration-300 ease-in-out",
-          mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full pointer-events-none"
+          "md:hidden fixed inset-0 z-40 bg-cyber-darker/95 backdrop-blur-lg transition-opacity duration-200 ease-out",
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
+        style={{ top: 0 }}
       >
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 z-50">
           <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="h-10 w-10 rounded-full flex items-center justify-center bg-cyber-dark border border-cyber-green/30"
+            onClick={closeMobileMenu}
+            className="h-10 w-10 rounded-full flex items-center justify-center bg-cyber-dark border border-cyber-green/30 active:scale-95 transition-transform touch-manipulation"
             aria-label="Close menu"
           >
             <X className="h-6 w-6 text-cyber-green" />
           </button>
         </div>
         
-        <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
+        <div className="flex flex-col items-center justify-center h-full gap-6 px-6 overflow-y-auto">
           <a 
             href="#faq" 
-            className="text-white hover:text-cyber-green transition-colors"
-            onClick={() => setMobileMenuOpen(false)}
+            className="text-white hover:text-cyber-green transition-colors text-lg active:scale-95 touch-manipulation"
+            onClick={closeMobileMenu}
           >
             FAQ
           </a>
           <a 
             href="https://www.ctcannabisalliance.org" 
-            className="cyber-button-purple w-full text-center"
+            className="cyber-button-purple w-full max-w-xs text-center active:scale-95 touch-manipulation"
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
           >
             JOIN THE ALLIANCE
           </a>
           <a 
             href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
-            className="cyber-button w-full text-center"
+            className="cyber-button w-full max-w-xs text-center active:scale-95 touch-manipulation"
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
           >
             USE CANNABIS GPT
           </a>
           <a 
-            href="https://www.aiwebtools.ai" 
-            className="cyber-button-purple w-full text-center"
+            href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+            className="cyber-button-purple w-full max-w-xs text-center active:scale-95 touch-manipulation"
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
           >
             MORE AI TOOLS
           </a>

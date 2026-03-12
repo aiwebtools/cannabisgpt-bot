@@ -1,6 +1,7 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Cannabis } from 'lucide-react';
+
+const AIWEBTOOLS_URL = 'https://aiwebtools.lovable.app/?via=aiwebtools';
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -118,7 +119,7 @@ const Hero = () => {
           <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left animate-fade-in">
             <div className="inline-block">
               <span className="text-xs font-cyber bg-cyber-green/10 px-3 py-1 rounded-full text-cyber-green border border-cyber-green/30">
-                AI WEB TOOLS BY <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AIWEBTOOLS.AI</a>
+                AI WEB TOOLS BY <a href={AIWEBTOOLS_URL} className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AIWEBTOOLS.AI</a>
               </span>
             </div>
             
@@ -129,7 +130,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">
-              <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a> presents Cannabis GPT - the most advanced AI web tools for cannabis professionals. 
+              <a href={AIWEBTOOLS_URL} className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a> presents Cannabis GPT - the most advanced AI web tools for cannabis professionals. 
               Featuring comprehensive strain genetics knowledge, precise potency calculations, up-to-date regulatory insights, 
               and expert cultivation guidance. Official AI tools partner of the Connecticut Cannabis Small Business Alliance (CCSBA).
             </p>
@@ -145,7 +146,7 @@ const Hero = () => {
                 CANNABIS GPT
               </a>
               <a 
-                href="https://www.aiwebtools.ai" 
+                href={AIWEBTOOLS_URL}
                 className="cyber-button-purple w-full sm:w-auto" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -156,7 +157,7 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start text-xs text-gray-500">
-              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#<a href="https://www.aiwebtools.ai" className="hover:text-cyber-green transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools</a></span>
+              <span className="bg-cyber-dark/50 px-2 py-1 rounded">#<a href={AIWEBTOOLS_URL} className="hover:text-cyber-green transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools</a></span>
               <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CannabisAI</span>
               <span className="bg-cyber-dark/50 px-2 py-1 rounded">#CCSBA</span>
               <span className="bg-cyber-dark/50 px-2 py-1 rounded">#AITools</span>
@@ -184,7 +185,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-0 right-0 z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-xs text-gray-500/60 text-center">
-            <strong className="text-cyber-green/70">Keywords:</strong> AI Web Tools, Cannabis AI, CCSBA Tools, <a href="https://www.aiwebtools.ai" className="hover:text-cyber-green/80 transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>, Premium Cannabis Technology
+            <strong className="text-cyber-green/70">Keywords:</strong> AI Web Tools, Cannabis AI, CCSBA Tools, <a href={AIWEBTOOLS_URL} className="hover:text-cyber-green/80 transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>, Premium Cannabis Technology
           </div>
         </div>
       </div>

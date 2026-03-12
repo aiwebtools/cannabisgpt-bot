@@ -1,17 +1,19 @@
 import React from 'react';
 import { Cannabis, Mail, Phone } from 'lucide-react';
 
+const AIWEBTOOLS_URL = 'https://aiwebtools.lovable.app/?via=aiwebtools';
+
 const Footer = () => {
   return (
-    <footer className="relative pt-20 pb-10 overflow-hidden">
+    <footer className="relative pt-16 sm:pt-20 pb-8 sm:pb-10 overflow-hidden">
       <div className="absolute inset-0 grid-bg"></div>
       <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-cyber-dark to-transparent z-10"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
-          <div className="md:col-span-5 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 mb-8 sm:mb-10">
+          <div className="md:col-span-5 space-y-5 sm:space-y-6">
             <a href="/" className="flex items-center gap-2 group">
-              <div className="relative h-10 w-10 overflow-hidden">
+              <div className="relative h-10 w-10 overflow-hidden flex-shrink-0">
                 <Cannabis 
                   className="h-10 w-10 text-cyber-green group-hover:text-cyber-green-light transition-colors duration-300" 
                   strokeWidth={1.5} 
@@ -19,13 +21,13 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-cyber text-xl text-white tracking-wide">CANNABIS GPT</span>
-                <span className="text-xs text-gray-400">Premium AI Web Tools by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
+                <span className="text-xs text-gray-400">Premium AI Web Tools by <a href={AIWEBTOOLS_URL} className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
               </div>
             </a>
             
             <div>
-              <p className="text-gray-400 max-w-lg mb-2">
-                Your ultimate cannabis intelligence assistant powered by <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. Premium AI web tools featuring comprehensive strain information, potency calculations, and expert guidance for cannabis professionals and <a href="https://www.ctcannabisalliance.org" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">CCSBA</a> members.
+              <p className="text-gray-400 max-w-lg mb-2 text-sm sm:text-base">
+                Your ultimate cannabis intelligence assistant powered by <a href={AIWEBTOOLS_URL} className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. Premium AI web tools featuring comprehensive strain information, potency calculations, and expert guidance for cannabis professionals and <a href="https://www.ctcannabisalliance.org" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">CCSBA</a> members.
               </p>
               
               <p className="text-xs text-gray-500 max-w-lg mb-3">
@@ -35,14 +37,14 @@ const Footer = () => {
               <div className="text-xs text-gray-500 space-y-1">
                 <p><strong className="text-cyber-green">AI Web Tools:</strong> Cannabis AI, Strain Genetics, Potency Calculator</p>
                 <p><strong className="text-cyber-green">CCSBA Partner:</strong> <a href="https://www.ctcannabisalliance.org" className="hover:text-cyber-green transition-colors" target="_blank" rel="noopener noreferrer">Connecticut Cannabis Small Business Alliance</a></p>
-                <p><strong className="text-cyber-green"><a href="https://www.aiwebtools.ai" className="hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>:</strong> Premium AI Tools & Cannabis Technology</p>
+                <p><strong className="text-cyber-green"><a href={AIWEBTOOLS_URL} className="hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>:</strong> Premium AI Tools & Cannabis Technology</p>
               </div>
             </div>
             
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a 
                 href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
-                className="cyber-button text-sm"
+                className="cyber-button text-sm text-center"
                 target="_blank" 
                 rel="noopener noreferrer"
                 title="Access Cannabis GPT AI Tools"
@@ -50,8 +52,8 @@ const Footer = () => {
                 GET STARTED
               </a>
               <a 
-                href="https://www.aiwebtools.ai" 
-                className="cyber-button-purple text-sm"
+                href={AIWEBTOOLS_URL}
+                className="cyber-button-purple text-sm text-center"
                 target="_blank" 
                 rel="noopener noreferrer"
                 title="More AI Web Tools by AiWebTools.Ai"
@@ -63,7 +65,7 @@ const Footer = () => {
           
           <div className="md:col-span-3 space-y-4">
             <h3 className="font-cyber text-lg text-white">AI Web Tools</h3>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-gray-400 text-sm">
               <li>
                 <a 
                   href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt"
@@ -88,7 +90,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://www.aiwebtools.ai" 
+                  href={AIWEBTOOLS_URL}
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -132,7 +134,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-4 space-y-4">
-            <h3 className="font-cyber text-lg text-white">Contact <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></h3>
+            <h3 className="font-cyber text-lg text-white">Contact <a href={AIWEBTOOLS_URL} className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></h3>
             <ul className="space-y-3 text-gray-400">
               <li>
                 <a 
@@ -140,7 +142,7 @@ const Footer = () => {
                   className="flex items-center gap-2 hover:text-cyber-green transition-colors"
                   title="Call AiWebTools.Ai"
                 >
-                  <Phone className="h-4 w-4 text-cyber-green" />
+                  <Phone className="h-4 w-4 text-cyber-green flex-shrink-0" />
                   <span>(475) 800-8096</span>
                 </a>
               </li>
@@ -150,16 +152,16 @@ const Footer = () => {
                   className="flex items-center gap-2 hover:text-cyber-green transition-colors"
                   title="Email AiWebTools.Ai"
                 >
-                  <Mail className="h-4 w-4 text-cyber-green" />
-                  <span>Contact@ai-webtools.com</span>
+                  <Mail className="h-4 w-4 text-cyber-green flex-shrink-0" />
+                  <span className="break-all">Contact@ai-webtools.com</span>
                 </a>
               </li>
             </ul>
             
             <div className="mt-6 space-y-2">
               <a 
-                href="https://www.aiwebtools.ai" 
-                className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple hover:text-cyber-purple-light transition-colors"
+                href={AIWEBTOOLS_URL}
+                className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple hover:text-cyber-purple-light transition-colors text-sm"
                 target="_blank" 
                 rel="noopener noreferrer"
                 title="Explore AI Web Tools by AiWebTools.Ai"
@@ -168,23 +170,23 @@ const Footer = () => {
               </a>
               
               <div className="text-xs text-gray-500">
-                <p>Keywords: AI Tools, Cannabis AI, CCSBA, <a href="https://www.aiwebtools.ai" className="hover:text-cyber-green transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></p>
+                <p>Keywords: AI Tools, Cannabis AI, CCSBA, <a href={AIWEBTOOLS_URL} className="hover:text-cyber-green transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></p>
               </div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm text-center">
-            &copy; {new Date().getFullYear()} <a href="https://www.aiwebtools.ai" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. All rights reserved. Premium AI Web Tools for Cannabis Professionals.
+          <p className="text-gray-500 text-xs sm:text-sm text-center">
+            &copy; {new Date().getFullYear()} <a href={AIWEBTOOLS_URL} className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>. All rights reserved. Premium AI Web Tools for Cannabis Professionals.
           </p>
           <p className="text-xs text-gray-400 text-center">
             Made with ❤️ for the <a href="https://www.ctcannabisalliance.org" className="text-cyber-green hover:text-cyber-green-light transition-colors" target="_blank" rel="noopener noreferrer">Connecticut Cannabis Small Business Alliance (CCSBA)</a>
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-4 sm:gap-6">
             <a 
               href="https://openai.com/policies/privacy-policy/" 
-              className="text-gray-500 hover:text-cyber-green text-sm transition-colors"
+              className="text-gray-500 hover:text-cyber-green text-xs sm:text-sm transition-colors"
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -192,7 +194,7 @@ const Footer = () => {
             </a>
             <a 
               href="https://aiwebtools.lovable.app/disclaimers" 
-              className="text-gray-500 hover:text-cyber-green text-sm transition-colors"
+              className="text-gray-500 hover:text-cyber-green text-xs sm:text-sm transition-colors"
               target="_blank" 
               rel="noopener noreferrer"
             >
