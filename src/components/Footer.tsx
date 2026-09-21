@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cannabis, Mail, Phone } from 'lucide-react';
 
-const AIWEBTOOLS_URL = 'https://aiwebtools.lovable.app/?via=aiwebtools';
+import { AIWEBTOOLS_URL, CHATGPT_VERSION_URL, INSITE_CHAT_URL, OTHER_GPTS_URL, VERSION_LABEL } from '@/lib/toolLinks';
 
 const Footer = () => {
   return (
