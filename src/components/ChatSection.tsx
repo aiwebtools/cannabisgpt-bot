@@ -40,6 +40,7 @@ const ChatSection = () => {
       if (!trimmed || loading) return;
 
       setError(null);
+      setOutOfCredits(false);
       setInput('');
       const next: ChatMessage[] = [...messages, { role: 'user', content: trimmed }];
       setMessages([...next, { role: 'assistant', content: '' }]);
