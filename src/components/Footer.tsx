@@ -74,19 +74,39 @@ const Footer = () => {
             <h3 className="font-cyber text-lg text-white">AI Web Tools</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a 
-                  href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt"
+                <a
+                  href={INSITE_CHAT_URL}
                   className="hover:text-cyber-green transition-colors"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  title="Cannabis GPT AI Tools"
+                  title="Cannabis GPT live chat on this site"
                 >
-                  Cannabis GPT
+                  Cannabis GPT {VERSION_LABEL.insite}
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://linktr.ee/ctcannabisalliance/?via=aiwebtools"
+                  href={CHATGPT_VERSION_URL}
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="External ChatGPT version of Cannabis GPT"
+                >
+                  Cannabis GPT {VERSION_LABEL.chatgpt}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt"
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="External ChatGPT version of Hemp GPT"
+                >
+                  Hemp GPT {VERSION_LABEL.chatgpt}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href={OTHER_GPTS_URL}
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
                   rel="noopener noreferrer"
