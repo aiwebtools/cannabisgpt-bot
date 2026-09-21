@@ -25,6 +25,7 @@ const ChatSection = () => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [outOfCredits, setOutOfCredits] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const hasStarted = messages.length > 1;
 
