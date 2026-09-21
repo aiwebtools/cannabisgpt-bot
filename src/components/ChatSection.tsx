@@ -132,10 +132,15 @@ const ChatSection = () => {
       <div className="container mx-auto px-3 sm:px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-green/30 bg-cyber-green/10 mb-3">
-              <Sparkles className="h-3.5 w-3.5 text-cyber-green" />
-              <span className="text-[11px] sm:text-xs text-cyber-green font-cyber tracking-wide">
-                NO LOGIN REQUIRED
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 mb-3">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-green/30 bg-cyber-green/10">
+                <Sparkles className="h-3.5 w-3.5 text-cyber-green" />
+                <span className="text-[11px] sm:text-xs text-cyber-green font-cyber tracking-wide">
+                  NO LOGIN REQUIRED
+                </span>
+              </span>
+              <span className="px-3 py-1 rounded-full border border-cyber-purple/40 bg-cyber-purple/10 text-[11px] sm:text-xs text-cyber-purple font-cyber tracking-wide">
+                INSITE VERSION
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-cyber text-white mb-2">
@@ -144,6 +149,17 @@ const ChatSection = () => {
             <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
               Strain genealogy to landrace origins, THC &amp; edible potency math, hemp compliance, cultivation advice,
               and full courses — ask anything cannabis or hemp related.
+            </p>
+            <p className="text-[11px] sm:text-xs text-gray-500 mt-2">
+              Prefer the external custom GPT?{' '}
+              <a
+                href={CHATGPT_VERSION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyber-green hover:text-cyber-green-light underline"
+              >
+                Open Cannabis GPT (CHATGPT VERSION)
+              </a>
             </p>
           </div>
 
