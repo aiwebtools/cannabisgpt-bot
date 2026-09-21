@@ -64,11 +64,16 @@ const ChatSection = () => {
 
         if (!res.ok || !res.body) {
           let msg = 'The AI is unavailable right now. Please try again.';
+          let code = 'unavailable';
           try {
             const data = await res.json();
             if (data?.error) msg = data.error;
+            if (data?.code) code = data.code;
           } catch {
             /* ignore */
+          }
+          if (code === 'credits_exhausted' || res.status === 402 || res.status === 403) {
+            setOutOfCredits(true);
           }
           throw new Error(msg);
         }
