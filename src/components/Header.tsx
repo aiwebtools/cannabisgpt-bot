@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Cannabis, Heart, Menu, X, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { AIWEBTOOLS_URL, CCSBA_URL, CHATGPT_VERSION_URL, INSITE_CHAT_URL, VERSION_LABEL } from '@/lib/toolLinks';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -79,10 +80,10 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-3 lg:gap-4">
             <a 
-              href="#chat" 
-              className="text-white hover:text-cyber-green transition-colors text-sm"
+              href={INSITE_CHAT_URL}
+              className="text-white hover:text-cyber-green transition-colors text-sm whitespace-nowrap"
             >
-              LIVE CHAT
+              LIVE CHAT <span className="text-cyber-green text-[10px]">{VERSION_LABEL.insite}</span>
             </a>
             <a 
               href="#faq" 
@@ -91,7 +92,7 @@ const Header = () => {
               FAQ
             </a>
             <a 
-              href="https://www.ctcannabisalliance.org" 
+              href={CCSBA_URL}
               className="cyber-button-purple text-sm whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
@@ -99,20 +100,21 @@ const Header = () => {
               JOIN THE ALLIANCE
             </a>
             <a 
-              href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
+              href={CHATGPT_VERSION_URL}
               className="cyber-button text-sm whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
+              title="Opens the external ChatGPT version of Cannabis GPT"
             >
-              USE CANNABIS GPT
+              USE CANNABIS GPT <span className="text-[10px]">{VERSION_LABEL.chatgpt}</span>
             </a>
             <a 
-              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              href={AIWEBTOOLS_URL}
               className="cyber-button-purple text-sm whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
             >
-              MORE AI TOOLS
+              MORE AI TOOLS (EXTERNAL)
             </a>
           </nav>
 
@@ -151,11 +153,11 @@ const Header = () => {
         
         <div className="flex flex-col items-center justify-center h-full gap-6 px-6 overflow-y-auto">
           <a 
-            href="#chat" 
-            className="text-white hover:text-cyber-green transition-colors text-lg active:scale-95 touch-manipulation"
+            href={INSITE_CHAT_URL}
+            className="cyber-button w-full max-w-xs text-center active:scale-95 touch-manipulation"
             onClick={closeMobileMenu}
           >
-            LIVE CHAT
+            LIVE CHAT {VERSION_LABEL.insite}
           </a>
           <a 
             href="#faq" 
@@ -165,7 +167,7 @@ const Header = () => {
             FAQ
           </a>
           <a 
-            href="https://www.ctcannabisalliance.org" 
+            href={CCSBA_URL}
             className="cyber-button-purple w-full max-w-xs text-center active:scale-95 touch-manipulation"
             target="_blank" 
             rel="noopener noreferrer"
@@ -174,22 +176,22 @@ const Header = () => {
             JOIN THE ALLIANCE
           </a>
           <a 
-            href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
+            href={CHATGPT_VERSION_URL}
             className="cyber-button w-full max-w-xs text-center active:scale-95 touch-manipulation"
             target="_blank" 
             rel="noopener noreferrer"
             onClick={closeMobileMenu}
           >
-            USE CANNABIS GPT
+            USE CANNABIS GPT {VERSION_LABEL.chatgpt}
           </a>
           <a 
-            href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+            href={AIWEBTOOLS_URL}
             className="cyber-button-purple w-full max-w-xs text-center active:scale-95 touch-manipulation"
             target="_blank" 
             rel="noopener noreferrer"
             onClick={closeMobileMenu}
           >
-            MORE AI TOOLS
+            MORE AI TOOLS (EXTERNAL)
           </a>
         </div>
       </div>

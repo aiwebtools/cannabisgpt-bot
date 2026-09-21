@@ -136,14 +136,21 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href="#chat"
+                className="cyber-button w-full sm:w-auto"
+                title="Chat with Cannabis GPT right here on this site"
+              >
+                CANNABIS GPT (INSITE VERSION)
+              </a>
               <a 
-                href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+                href="https://chatgpt.com/g/g-69018c711fa48191bdeb7e4b0642092c-cannabis-gpt" 
                 className="cyber-button w-full sm:w-auto" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                title="Access Cannabis GPT AI Tools by AiWebTools.Ai"
+                title="Opens the external ChatGPT version of Cannabis GPT"
               >
-                CANNABIS GPT
+                CANNABIS GPT (CHATGPT VERSION)
               </a>
               <a 
                 href={AIWEBTOOLS_URL}
@@ -152,7 +159,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 title="Explore More AI Web Tools by AiWebTools.Ai"
               >
-                MORE AI WEB TOOLS
+                MORE AI WEB TOOLS (EXTERNAL)
               </a>
             </div>
 

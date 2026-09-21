@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cannabis, Mail, Phone } from 'lucide-react';
 
-const AIWEBTOOLS_URL = 'https://aiwebtools.lovable.app/?via=aiwebtools';
+import { AIWEBTOOLS_URL, CHATGPT_VERSION_URL, INSITE_CHAT_URL, OTHER_GPTS_URL, VERSION_LABEL } from '@/lib/toolLinks';
 
 const Footer = () => {
   return (
@@ -42,14 +42,21 @@ const Footer = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a
+                href={INSITE_CHAT_URL}
+                className="cyber-button text-sm text-center"
+                title="Chat with Cannabis GPT on this site"
+              >
+                GET STARTED {VERSION_LABEL.insite}
+              </a>
               <a 
-                href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+                href={CHATGPT_VERSION_URL}
                 className="cyber-button text-sm text-center"
                 target="_blank" 
                 rel="noopener noreferrer"
-                title="Access Cannabis GPT AI Tools"
+                title="Opens the external ChatGPT version of Cannabis GPT"
               >
-                GET STARTED
+                GET STARTED {VERSION_LABEL.chatgpt}
               </a>
               <a 
                 href={AIWEBTOOLS_URL}
@@ -58,7 +65,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 title="More AI Web Tools by AiWebTools.Ai"
               >
-                MORE AI TOOLS
+                MORE AI TOOLS (EXTERNAL)
               </a>
             </div>
           </div>
@@ -67,19 +74,39 @@ const Footer = () => {
             <h3 className="font-cyber text-lg text-white">AI Web Tools</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a 
-                  href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt"
+                <a
+                  href={INSITE_CHAT_URL}
                   className="hover:text-cyber-green transition-colors"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  title="Cannabis GPT AI Tools"
+                  title="Cannabis GPT live chat on this site"
                 >
-                  Cannabis GPT
+                  Cannabis GPT {VERSION_LABEL.insite}
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://linktr.ee/ctcannabisalliance/?via=aiwebtools"
+                  href={CHATGPT_VERSION_URL}
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="External ChatGPT version of Cannabis GPT"
+                >
+                  Cannabis GPT {VERSION_LABEL.chatgpt}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt"
+                  className="hover:text-cyber-green transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="External ChatGPT version of Hemp GPT"
+                >
+                  Hemp GPT {VERSION_LABEL.chatgpt}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href={OTHER_GPTS_URL}
                   className="hover:text-cyber-green transition-colors"
                   target="_blank" 
                   rel="noopener noreferrer"

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { SearchCheck, FileText, Lightbulb, ChevronRight, Eye, Mic, Code, Brain, Zap } from 'lucide-react';
+import { CHATGPT_VERSION_URL, INSITE_CHAT_URL, OTHER_GPTS_URL, VERSION_LABEL } from '@/lib/toolLinks';
 
 const steps = [
   {
@@ -47,7 +48,7 @@ const HowItWorks = () => {
         {/* New Button Section */}
         <div className="text-center mb-12 md:mb-16">
           <a 
-            href="https://linktr.ee/ctcannabisalliance/?via=aiwebtools"
+            href={OTHER_GPTS_URL}
             className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyber-purple/20 to-cyber-green/20 border border-cyber-purple/30 rounded-full hover:from-cyber-purple/30 hover:to-cyber-green/30 hover:border-cyber-green/50 transition-all duration-300 transform hover:scale-105 hover:shadow-neon-purple"
             target="_blank" 
             rel="noopener noreferrer"
@@ -109,14 +110,22 @@ const HowItWorks = () => {
           </div>
           
           <div className="mt-8 md:mt-12 flex justify-center animate-fade-in">
-            <a 
-              href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
-              className="cyber-button w-full sm:w-auto text-center"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              GET STARTED NOW
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={INSITE_CHAT_URL}
+                className="cyber-button w-full sm:w-auto text-center"
+              >
+                START CHATTING {VERSION_LABEL.insite}
+              </a>
+              <a
+                href={CHATGPT_VERSION_URL}
+                className="cyber-button-purple w-full sm:w-auto text-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CANNABIS GPT {VERSION_LABEL.chatgpt}
+              </a>
+            </div>
           </div>
         </div>
       </div>
