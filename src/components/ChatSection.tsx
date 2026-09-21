@@ -246,10 +246,43 @@ const ChatSection = () => {
               )}
             </div>
 
-            {error && (
-              <div className="px-3 sm:px-4 py-2 text-xs text-cyber-pink border-t border-cyber-pink/20 bg-cyber-pink/10">
-                {error}
+            {outOfCredits ? (
+              <div className="px-3 sm:px-4 py-4 border-t border-cyber-purple/30 bg-cyber-purple/10">
+                <div className="flex items-start gap-2 mb-3">
+                  <BatteryWarning className="h-5 w-5 text-cyber-purple flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-200">
+                    <strong className="text-white">Sorry — community credits for the in-site chat have run out for today.</strong>{' '}
+                    No worries, the same Cannabis GPT is available right now on ChatGPT. Pick up your question there and
+                    come back tomorrow when credits reset.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={CHATGPT_VERSION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cyber-button text-center text-sm inline-flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    USE CANNABIS GPT (CHATGPT VERSION)
+                  </a>
+                  <a
+                    href={OTHER_GPTS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cyber-button-purple text-center text-sm inline-flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    OTHER CANNABIS GPTS (EXTERNAL)
+                  </a>
+                </div>
               </div>
+            ) : (
+              error && (
+                <div className="px-3 sm:px-4 py-2 text-xs text-cyber-pink border-t border-cyber-pink/20 bg-cyber-pink/10">
+                  {error}
+                </div>
+              )
             )}
 
             <form
