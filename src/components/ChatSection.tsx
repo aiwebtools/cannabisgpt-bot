@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Cannabis, Send, Loader2, Sparkles, Download, RotateCcw } from 'lucide-react';
+import { Cannabis, Send, Loader2, Sparkles, Download, RotateCcw, ExternalLink, BatteryWarning } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { CHATGPT_VERSION_URL, OTHER_GPTS_URL } from '@/lib/toolLinks';
 
 type ChatMessage = { role: 'user' | 'assistant'; content: string };
 
