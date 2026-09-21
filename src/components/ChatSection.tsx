@@ -168,6 +168,9 @@ const ChatSection = () => {
               <div className="flex items-center gap-2 min-w-0">
                 <Cannabis className="h-5 w-5 text-cyber-green flex-shrink-0" strokeWidth={1.5} />
                 <span className="font-cyber text-sm text-white truncate">CANNABIS GPT</span>
+                <span className="text-[9px] px-1.5 py-0.5 rounded border border-cyber-purple/40 text-cyber-purple font-cyber flex-shrink-0">
+                  INSITE
+                </span>
                 <span className="text-[10px] text-gray-500 hidden sm:inline">• 21+ • educational use only</span>
               </div>
               <div className="flex items-center gap-1">
