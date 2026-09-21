@@ -110,3 +110,22 @@
     border border-white/5 hover:border-white/20;
   }
 }
+
+@layer components {
+  .chat-markdown > :first-child { margin-top: 0; }
+  .chat-markdown > :last-child { margin-bottom: 0; }
+  .chat-markdown p { @apply my-2; }
+  .chat-markdown strong { @apply text-white font-semibold; }
+  .chat-markdown h1, .chat-markdown h2, .chat-markdown h3 { @apply font-cyber text-cyber-green mt-4 mb-2 text-base; }
+  .chat-markdown ul { @apply list-disc pl-5 my-2 space-y-1; }
+  .chat-markdown ol { @apply list-decimal pl-5 my-2 space-y-1; }
+  .chat-markdown a { @apply text-cyber-green underline underline-offset-2; }
+  .chat-markdown code { @apply bg-black/60 text-cyber-green px-1 py-0.5 rounded text-[0.85em]; }
+  .chat-markdown pre { @apply bg-black/70 border border-cyber-green/20 rounded-lg p-3 my-3 overflow-x-auto text-xs leading-snug; }
+  .chat-markdown pre code { @apply bg-transparent p-0 text-gray-200; }
+  .chat-markdown table { @apply w-full my-3 text-xs border border-white/10; }
+  .chat-markdown th, .chat-markdown td { @apply border border-white/10 px-2 py-1 text-left; }
+  .chat-markdown th { @apply bg-white/5 text-white; }
+  .chat-markdown blockquote { @apply border-l-2 border-cyber-purple/50 pl-3 italic text-gray-400 my-2; }
+  .chat-markdown hr { @apply border-white/10 my-3; }
+}

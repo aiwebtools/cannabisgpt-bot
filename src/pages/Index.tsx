@@ -5,6 +5,7 @@ import AgeVerification from '@/components/AgeVerification';
 
 // Lazy-loaded components
 const Hero = lazy(() => import('@/components/Hero'));
+const ChatSection = lazy(() => import('@/components/ChatSection'));
 const Features = lazy(() => import('@/components/Features'));
 const HowItWorks = lazy(() => import('@/components/HowItWorks'));
 const VideoDemo = lazy(() => import('@/components/VideoDemo'));
@@ -41,6 +42,9 @@ const Index = () => {
       <main>
         <Suspense fallback={<SectionLoader />}>
           <Hero />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <ChatSection />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <Features />
