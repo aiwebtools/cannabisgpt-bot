@@ -99,10 +99,18 @@ Deno.serve(async (req) => {
     if (!upstream.ok || !upstream.body) {
       const detail = await upstream.text().catch(() => "");
       let message = "The AI is unavailable right now. Please try again.";
-      if (upstream.status === 429) message = "Too many requests right now — please wait a moment and try again.";
-      if (upstream.status === 402) message = "AI credits have run out. Please top up to keep chatting.";
+      let code = "unavailable";
+      if (upstream.status === 429) {
+        code = "rate_limited";
+        message = "Community chat is busy right now — please wait a moment and try again.";
+      }
+      if (upstream.status === 402 || upstream.status === 403) {
+        code = "credits_exhausted";
+        message =
+          "Sorry, the community credits for the in-site chat have run out for today. Please try the ChatGPT version of Cannabis GPT — it has the same expertise and is available right now.";
+      }
       console.error("gateway error", upstream.status, detail);
-      return new Response(JSON.stringify({ error: message }), {
+      return new Response(JSON.stringify({ error: message, code }), {
         status: upstream.status,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
