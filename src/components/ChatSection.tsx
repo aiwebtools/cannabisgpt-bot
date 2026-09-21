@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Cannabis, Send, Loader2, Sparkles, Download, RotateCcw } from 'lucide-react';
+import { Cannabis, Send, Loader2, Sparkles, Download, RotateCcw, ExternalLink, BatteryWarning } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { CHATGPT_VERSION_URL, OTHER_GPTS_URL } from '@/lib/toolLinks';
 
 type ChatMessage = { role: 'user' | 'assistant'; content: string };
 
@@ -24,6 +25,7 @@ const ChatSection = () => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [outOfCredits, setOutOfCredits] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const hasStarted = messages.length > 1;
 
@@ -38,6 +40,7 @@ const ChatSection = () => {
       if (!trimmed || loading) return;
 
       setError(null);
+      setOutOfCredits(false);
       setInput('');
       const next: ChatMessage[] = [...messages, { role: 'user', content: trimmed }];
       setMessages([...next, { role: 'assistant', content: '' }]);
@@ -61,11 +64,16 @@ const ChatSection = () => {
 
         if (!res.ok || !res.body) {
           let msg = 'The AI is unavailable right now. Please try again.';
+          let code = 'unavailable';
           try {
             const data = await res.json();
             if (data?.error) msg = data.error;
+            if (data?.code) code = data.code;
           } catch {
             /* ignore */
+          }
+          if (code === 'credits_exhausted' || res.status === 402 || res.status === 403) {
+            setOutOfCredits(true);
           }
           throw new Error(msg);
         }
@@ -124,10 +132,15 @@ const ChatSection = () => {
       <div className="container mx-auto px-3 sm:px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-green/30 bg-cyber-green/10 mb-3">
-              <Sparkles className="h-3.5 w-3.5 text-cyber-green" />
-              <span className="text-[11px] sm:text-xs text-cyber-green font-cyber tracking-wide">
-                NO LOGIN REQUIRED
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 mb-3">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-green/30 bg-cyber-green/10">
+                <Sparkles className="h-3.5 w-3.5 text-cyber-green" />
+                <span className="text-[11px] sm:text-xs text-cyber-green font-cyber tracking-wide">
+                  NO LOGIN REQUIRED
+                </span>
+              </span>
+              <span className="px-3 py-1 rounded-full border border-cyber-purple/40 bg-cyber-purple/10 text-[11px] sm:text-xs text-cyber-purple font-cyber tracking-wide">
+                INSITE VERSION
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-cyber text-white mb-2">
@@ -137,6 +150,17 @@ const ChatSection = () => {
               Strain genealogy to landrace origins, THC &amp; edible potency math, hemp compliance, cultivation advice,
               and full courses — ask anything cannabis or hemp related.
             </p>
+            <p className="text-[11px] sm:text-xs text-gray-500 mt-2">
+              Prefer the external custom GPT?{' '}
+              <a
+                href={CHATGPT_VERSION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyber-green hover:text-cyber-green-light underline"
+              >
+                Open Cannabis GPT (CHATGPT VERSION)
+              </a>
+            </p>
           </div>
 
           <div className="glassmorphism border border-cyber-green/20 rounded-2xl overflow-hidden">
@@ -144,6 +168,9 @@ const ChatSection = () => {
               <div className="flex items-center gap-2 min-w-0">
                 <Cannabis className="h-5 w-5 text-cyber-green flex-shrink-0" strokeWidth={1.5} />
                 <span className="font-cyber text-sm text-white truncate">CANNABIS GPT</span>
+                <span className="text-[9px] px-1.5 py-0.5 rounded border border-cyber-purple/40 text-cyber-purple font-cyber flex-shrink-0">
+                  INSITE
+                </span>
                 <span className="text-[10px] text-gray-500 hidden sm:inline">• 21+ • educational use only</span>
               </div>
               <div className="flex items-center gap-1">
@@ -219,10 +246,43 @@ const ChatSection = () => {
               )}
             </div>
 
-            {error && (
-              <div className="px-3 sm:px-4 py-2 text-xs text-cyber-pink border-t border-cyber-pink/20 bg-cyber-pink/10">
-                {error}
+            {outOfCredits ? (
+              <div className="px-3 sm:px-4 py-4 border-t border-cyber-purple/30 bg-cyber-purple/10">
+                <div className="flex items-start gap-2 mb-3">
+                  <BatteryWarning className="h-5 w-5 text-cyber-purple flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-200">
+                    <strong className="text-white">Sorry — community credits for the in-site chat have run out for today.</strong>{' '}
+                    No worries, the same Cannabis GPT is available right now on ChatGPT. Pick up your question there and
+                    come back tomorrow when credits reset.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={CHATGPT_VERSION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cyber-button text-center text-sm inline-flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    USE CANNABIS GPT (CHATGPT VERSION)
+                  </a>
+                  <a
+                    href={OTHER_GPTS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cyber-button-purple text-center text-sm inline-flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    OTHER CANNABIS GPTS (EXTERNAL)
+                  </a>
+                </div>
               </div>
+            ) : (
+              error && (
+                <div className="px-3 sm:px-4 py-2 text-xs text-cyber-pink border-t border-cyber-pink/20 bg-cyber-pink/10">
+                  {error}
+                </div>
+              )
             )}
 
             <form
