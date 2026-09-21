@@ -79,6 +79,12 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-3 lg:gap-4">
             <a 
+              href="#chat" 
+              className="text-white hover:text-cyber-green transition-colors text-sm"
+            >
+              LIVE CHAT
+            </a>
+            <a 
               href="#faq" 
               className="text-white hover:text-cyber-green transition-colors text-sm"
             >
@@ -144,6 +150,13 @@ const Header = () => {
         </div>
         
         <div className="flex flex-col items-center justify-center h-full gap-6 px-6 overflow-y-auto">
+          <a 
+            href="#chat" 
+            className="text-white hover:text-cyber-green transition-colors text-lg active:scale-95 touch-manipulation"
+            onClick={closeMobileMenu}
+          >
+            LIVE CHAT
+          </a>
           <a 
             href="#faq" 
             className="text-white hover:text-cyber-green transition-colors text-lg active:scale-95 touch-manipulation"
