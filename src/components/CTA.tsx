@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { AIWEBTOOLS_URL, CHATGPT_VERSION_URL, INSITE_CHAT_URL, VERSION_LABEL } from '@/lib/toolLinks';
 
 const CTA = () => {
   return (
@@ -22,22 +23,30 @@ const CTA = () => {
                 Get immediate answers to your cannabis questions with detailed analysis, visualizations, and up-to-date information.
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                <a 
-                  href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+                <a
+                  href={INSITE_CHAT_URL}
                   className="cyber-button inline-flex items-center justify-center gap-2 group w-full sm:w-auto"
-                  target="_blank" 
-                  rel="noopener noreferrer"
                 >
-                  <span>TRY CANNABIS GPT</span>
+                  <span>TRY CANNABIS GPT {VERSION_LABEL.insite}</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a 
-                  href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+                  href={CHATGPT_VERSION_URL}
+                  className="cyber-button inline-flex items-center justify-center gap-2 group w-full sm:w-auto"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="Opens the external ChatGPT version of Cannabis GPT"
+                >
+                  <span>TRY CANNABIS GPT {VERSION_LABEL.chatgpt}</span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a 
+                  href={AIWEBTOOLS_URL}
                   className="cyber-button-purple w-full sm:w-auto text-center"
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  EXPLORE MORE TOOLS
+                  EXPLORE MORE TOOLS (EXTERNAL)
                 </a>
               </div>
             </div>
@@ -71,12 +80,12 @@ const CTA = () => {
                   </ul>
                   <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-green/30 to-transparent"></div>
                   <a 
-                    href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
-                    className="text-cyber-green hover:text-cyber-green-light text-sm font-cyber transition-colors"
+                    href={CHATGPT_VERSION_URL}
+                    className="text-cyber-green hover:text-cyber-green-light text-sm font-cyber transition-colors text-center"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
-                    ACCESS NOW
+                    ACCESS NOW {VERSION_LABEL.chatgpt}
                   </a>
                 </div>
               </div>

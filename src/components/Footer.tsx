@@ -42,14 +42,21 @@ const Footer = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a
+                href={INSITE_CHAT_URL}
+                className="cyber-button text-sm text-center"
+                title="Chat with Cannabis GPT on this site"
+              >
+                GET STARTED {VERSION_LABEL.insite}
+              </a>
               <a 
-                href="https://chatgpt.com/g/g-BSB5oEyLI-hemp-gpt" 
+                href={CHATGPT_VERSION_URL}
                 className="cyber-button text-sm text-center"
                 target="_blank" 
                 rel="noopener noreferrer"
-                title="Access Cannabis GPT AI Tools"
+                title="Opens the external ChatGPT version of Cannabis GPT"
               >
-                GET STARTED
+                GET STARTED {VERSION_LABEL.chatgpt}
               </a>
               <a 
                 href={AIWEBTOOLS_URL}
@@ -58,7 +65,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 title="More AI Web Tools by AiWebTools.Ai"
               >
-                MORE AI TOOLS
+                MORE AI TOOLS (EXTERNAL)
               </a>
             </div>
           </div>
